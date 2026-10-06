@@ -1,2 +1,4 @@
-// Somente URL do projeto e chave PUBLICÁVEL (ou anon). Nunca use service_role/secret.
-window.RAFAH_CONFIG = {url:'',key:''};
+window.RAFAH_CONFIG = {
+  "url": "https://wknxblyfaddquagwvilg.supabase.co",
+  "key": "sb_publishable_mnXRtEV00Q5imWX3ywmwWg_wTmnxZI8"
+};
