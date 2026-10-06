@@ -1,0 +1,3795 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos |Farmácia Rafah+</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="header">
+
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/logo.png" alt="Drogaria Rafah+">
+            </a>
+        </div>
+  <nav class="navbar">
+            <a href="index.html" >Início</a>
+            <a href="produtos.html"class="active">Produtos</a>
+            <a href="ofertas.html">Ofertas</a>
+            <a href="contato.html">Contato</a>
+        </nav>
+
+
+        <div class="header-icons">
+
+            <a href="carrinho.html" class="cart-btn">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Meu carrinho
+                <span id="cart-count">0</span>
+            </a>
+        </div>
+
+    </header>
+
+    <section class="search-area">
+
+        <div class="search-box">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input type="text"
+                placeholder="Busque por medicamentos, produtos e mais...">
+
+            <button>Buscar</button>
+
+        </div>
+
+        <div class="mini-cards">
+
+            <div class="mini-card">
+
+                <i class="fa-solid fa-truck-fast"></i>
+
+                <div>
+                    <h4>Entrega rápida</h4>
+                    <p>Para toda cidade</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="products-page">
+
+        <div class="products-top">
+
+            <div>
+                <h1>Produtos</h1>
+                <p>Confira os melhores medicamentos e produtos para o seu bem-estar.</p>
+            </div>
+
+            <select id="sort-select">
+                <option value="relevantes">Mais relevantes</option>
+                <option value="menor-preco">Menor preço</option>
+                <option value="maior-preco">Maior preço</option>
+                <option value="mais-vendidos">Mais vendidos</option>
+            </select>
+
+        </div>
+
+        <div class="products-container">
+
+            <aside class="filters">
+
+                <h3>Categorias</h3>
+
+                <ul id="category-filters">
+                    <li class="active-filter"><button type="button" data-filter="all" aria-pressed="true"><span>Todos os produtos</span><span class="category-count" aria-hidden="true">171</span></button></li>
+                    <li><button type="button" data-filter="analgesicos" aria-pressed="false"><span>Dor e inflamação</span><span class="category-count" aria-hidden="true">30</span></button></li>
+                    <li><button type="button" data-filter="vitaminas" aria-pressed="false"><span>Vitaminas e minerais</span><span class="category-count" aria-hidden="true">18</span></button></li>
+                    <li><button type="button" data-filter="higiene" aria-pressed="false"><span>Higiene</span><span class="category-count" aria-hidden="true">3</span></button></li>
+                    <li><button type="button" data-filter="cuidados-pessoais" aria-pressed="false"><span>Pele e cuidados pessoais</span><span class="category-count" aria-hidden="true">13</span></button></li>
+                    <li><button type="button" data-filter="infantil" aria-pressed="false"><span>Linha infantil</span><span class="category-count" aria-hidden="true">11</span></button></li>
+                    <li><button type="button" data-filter="genericos" aria-pressed="false"><span>Genéricos</span><span class="category-count" aria-hidden="true">5</span></button></li>
+                    <li><button type="button" data-filter="alergias" aria-pressed="false"><span>Alergia</span><span class="category-count" aria-hidden="true">8</span></button></li>
+                    <li><button type="button" data-filter="respiratorios" aria-pressed="false"><span>Respiração, gripe e garganta</span><span class="category-count" aria-hidden="true">27</span></button></li>
+                    <li><button type="button" data-filter="digestivos" aria-pressed="false"><span>Digestão e apetite</span><span class="category-count" aria-hidden="true">20</span></button></li>
+                    <li><button type="button" data-filter="circulacao" aria-pressed="false"><span>Coração e circulação</span><span class="category-count" aria-hidden="true">34</span></button></li>
+                    <li><button type="button" data-filter="metabolismo" aria-pressed="false"><span>Diabetes e tireoide</span><span class="category-count" aria-hidden="true">10</span></button></li>
+                    <li><button type="button" data-filter="articulacoes" aria-pressed="false"><span>Articulações</span><span class="category-count" aria-hidden="true">1</span></button></li>
+                    <li><button type="button" data-filter="antiparasitarios" aria-pressed="false"><span>Antiparasitários</span><span class="category-count" aria-hidden="true">3</span></button></li>
+                    <li><button type="button" data-filter="homeopaticos" aria-pressed="false"><span>Homeopáticos</span><span class="category-count" aria-hidden="true">4</span></button></li>
+                    <li><button type="button" data-filter="saude-intima" aria-pressed="false"><span>Saúde íntima e urinária</span><span class="category-count" aria-hidden="true">3</span></button></li>
+                </ul>
+
+                <h3>Filtros</h3>
+
+                <div class="filter-group">
+                    <label><input type="checkbox" id="offers-only"> Somente ofertas</label>
+                    <label><input type="checkbox" id="featured-only"> Produtos em destaque</label>
+                </div>
+
+            </aside>
+
+            <div class="products-grid-wrapper">
+
+                <p id="no-products-message" style="display:none;">
+                    Nenhum produto encontrado para esse filtro ou busca.
+                </p>
+
+                <div class="products-grid-page" id="products-grid-page">
+
+                <div class="product-card" data-category="digestivos">
+
+                    <span class="discount">-20%</span>
+
+                    <img src="img/enoLaranja.jpg"
+                        alt="Produto">
+
+                    <h4>ENO Laranja</h4>
+
+                    <p>Alívio rápido da azia</p>
+
+                    <div class="price">
+                        R$ 5,00
+                    </div>
+
+                    <button data-product-id="eno" data-product-name="ENO Laranja" data-product-price="5.00" data-product-img="img/enoLaranja.jpg">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="analgesicos">
+
+                    <span class="discount">-15%</span>
+
+                    <img src="img/dorflexCartela.jpg"
+                        alt="Produto">
+
+                    <h4>Dorflex</h4>
+
+                    <p>Analgésico e relaxante</p>
+
+                    <div class="price">
+                        R$ 8,00
+                    </div>
+
+                    <button data-product-id="dorflex" data-product-name="Dorflex" data-product-price="8.00" data-product-img="img/dorflexCartela.jpg">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="analgesicos">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/neosaldina.jpg"
+                        alt="Produto">
+
+                    <h4>Neosaldina</h4>
+
+                    <p>Combate dores e enxaquecas</p>
+
+                    <div class="price">
+                        R$ 10,50
+                    </div>
+
+                    <button data-product-id="neosaldina" data-product-name="Neosaldina" data-product-price="10.50" data-product-img="img/neosaldina.jpg">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="analgesicos genericos">
+
+                    <span class="discount">-25%</span>
+
+                    <img src="img/dipirona500mg.jpg"
+                        alt="Produto">
+
+                    <h4>Dipirona 500mg</h4>
+
+                    <p>Medicamento genérico</p>
+
+                    <div class="price">
+                        R$ 5,00
+                    </div>
+
+                    <button data-product-id="dipirona" data-product-name="Dipirona 500mg" data-product-price="5.00" data-product-img="img/dipirona500mg.jpg">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="digestivos">
+
+                    <span class="discount">-12%</span>
+
+                    <img src="img/engovCart6.jpg"
+                        alt="Produto">
+
+                    <h4>Engov</h4>
+
+                    <p>Alívio pós exageros</p>
+
+                    <div class="price">
+                        R$ 8,90
+                    </div>
+
+                    <button data-product-id="engov" data-product-name="Engov" data-product-price="8.90" data-product-img="img/engovCart6.jpg">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="respiratorios analgesicos">
+
+                    <span class="discount">-18%</span>
+
+                    <img src="img/cimegrip.jpg"
+                        alt="Produto">
+
+                    <h4>Cimegripe</h4>
+
+                    <p>Combate sintomas da gripe</p>
+
+                    <div class="price">
+                        R$ 14,90
+                    </div>
+
+                    <button data-product-id="cimegripe" data-product-name="Cimegripe" data-product-price="14.90" data-product-img="img/cimegrip.jpg">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="vitaminas">
+
+                    <span class="discount">-22%</span>
+
+                    <img src="img/lavitanA-Z.jpg"
+                        alt="Produto">
+
+                    <h4>Lavitan A-Z</h4>
+
+                    <p>Vitaminas completas</p>
+
+                    <div class="price">
+                        R$ 23,90
+                    </div>
+
+                    <button data-product-id="lavitan" data-product-name="Lavitan A-Z" data-product-price="23.90" data-product-img="img/lavitanA-Z.jpg">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="higiene respiratorios">
+
+                    <span class="discount">-17%</span>
+
+                    <img src="img/sorineSpray.jpg"
+                        alt="Produto">
+
+                    <h4>Sorine</h4>
+
+                    <p>Spray nasal refrescante</p>
+
+                    <div class="price">
+                        R$ 18,90
+                    </div>
+
+                    <button data-product-id="sorine" data-product-name="Sorine" data-product-price="18.90" data-product-img="img/sorineSpray.jpg">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="circulacao">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/ass.jpg" alt="AAS PROTECT 100MG C/30 CPRO" loading="lazy" decoding="async">
+
+                    <h4>AAS PROTECT 100MG C/30 CPRO</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 21,20
+                    </div>
+
+                    <button data-product-img="img/ass.jpg" data-product-id="med-1" data-product-name="AAS PROTECT 100MG C/30 CPRO" data-product-price="21.20">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="respiratorios">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/abrilar.jpg" alt="ABRILAR XPE 100ML" loading="lazy" decoding="async">
+
+                    <h4>ABRILAR XPE 100ML</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 51,50
+                    </div>
+
+                    <button data-product-img="img/abrilar.jpg" data-product-id="med-2" data-product-name="ABRILAR XPE 100ML" data-product-price="51.50">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="circulacao">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/ablok.jpg" alt="ABLOK 25MG 30CPR" loading="lazy" decoding="async">
+
+                    <h4>ABLOK 25MG 30CPR</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 14,55
+                    </div>
+
+                    <button data-product-img="img/ablok.jpg" data-product-id="med-3" data-product-name="ABLOK 25MG 30CPR" data-product-price="14.55">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="vitaminas">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/adtil.jpg" alt="AD-TIL GTS 20ML" loading="lazy" decoding="async">
+
+                    <h4>AD-TIL GTS 20ML</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 20,90
+                    </div>
+
+                    <button data-product-img="img/adtil.jpg" data-product-id="med-4" data-product-name="AD-TIL GTS 20ML" data-product-price="20.90">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="analgesicos">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/advil.jpg" alt="ADVIL 400MG C/8 CPR" loading="lazy" decoding="async">
+
+                    <h4>ADVIL 400MG C/8 CPR</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 23,10
+                    </div>
+
+                    <button data-product-img="img/advil.jpg" data-product-id="med-5" data-product-name="ADVIL 400MG C/8 CPR" data-product-price="23.10">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="vitaminas">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/adfort.jpg" alt="ADEFORTE ORAL 3ML 1 AMPOLA GRO" loading="lazy" decoding="async">
+
+                    <h4>ADEFORTE ORAL 3ML 1 AMPOLA GRO</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 30,60
+                    </div>
+
+                    <button data-product-img="img/adfort.jpg" data-product-id="med-6" data-product-name="ADEFORTE ORAL 3ML 1 AMPOLA GRO" data-product-price="30.60">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="vitaminas">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/adfortturbo.jpg" alt="ADEFORTE TURBO AMPOL A C/3ML-D" loading="lazy" decoding="async">
+
+                    <h4>ADEFORTE TURBO AMPOL A C/3ML-D</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 51,30
+                    </div>
+
+                    <button data-product-img="img/adfortturbo.jpg" data-product-id="med-7" data-product-name="ADEFORTE TURBO AMPOL A C/3ML-D" data-product-price="51.30">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="respiratorios">
+
+                    <span class="discount">-5%</span>
+
+                    <img src="img/aerolin.jpg" alt="AEROLIN SPRAY C/200 DOSES" loading="lazy" decoding="async">
+
+                    <h4>AEROLIN SPRAY C/200 DOSES</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 25,90
+                    </div>
+
+                    <button data-product-img="img/aerolin.jpg" data-product-id="med-8" data-product-name="AEROLIN SPRAY C/200 DOSES" data-product-price="25.90">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="saude-intima">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/albocresil.jpg" alt="ALBOCRESIL OVULOS C/6" loading="lazy" decoding="async">
+
+                    <h4>ALBOCRESIL OVULOS C/6</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 25,65
+                    </div>
+
+                    <button data-product-img="img/albocresil.jpg" data-product-id="med-9" data-product-name="ALBOCRESIL OVULOS C/6" data-product-price="25.65">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="saude-intima">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/albocresilsolu.jpg" alt="ALBOCRESIL SOLUCAO 12ML" loading="lazy" decoding="async">
+
+                    <h4>ALBOCRESIL SOLUCAO 12ML</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 40,05
+                    </div>
+
+                    <button data-product-img="img/albocresilsolu.jpg" data-product-id="med-10" data-product-name="ALBOCRESIL SOLUCAO 12ML" data-product-price="40.05">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="respiratorios">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/alenia.jpg" alt="ALENIA 12/400MCG C/60 CAP REFI" loading="lazy" decoding="async">
+
+                    <h4>ALENIA 12/400MCG C/60 CAP REFI</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 146,85
+                    </div>
+
+                    <button data-product-img="img/alenia.jpg" data-product-id="med-11" data-product-name="ALENIA 12/400MCG C/60 CAP REFI" data-product-price="146.85">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="analgesicos infantil">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/alivium.jpg" alt="ALIVIUM 100MG GTS 20ML" loading="lazy" decoding="async">
+
+                    <h4>ALIVIUM 100MG GTS 20ML</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 44,45
+                    </div>
+
+                    <button data-product-img="img/alivium.jpg" data-product-id="med-12" data-product-name="ALIVIUM 100MG GTS 20ML" data-product-price="44.45">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="circulacao">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/aldactone.jpg" alt="ALDACTONE 25MG 30CPR" loading="lazy" decoding="async">
+
+                    <h4>ALDACTONE 25MG 30CPR</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 41,10
+                    </div>
+
+                    <button data-product-img="img/aldactone.jpg" data-product-id="med-13" data-product-name="ALDACTONE 25MG 30CPR" data-product-price="41.10">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="alergias">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/allegra60.jpg" alt="ALLEGRA 60MG 10CPR" loading="lazy" decoding="async">
+
+                    <h4>ALLEGRA 60MG 10CPR</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 26,90
+                    </div>
+
+                    <button data-product-img="img/allegra60.jpg" data-product-id="med-14" data-product-name="ALLEGRA 60MG 10CPR" data-product-price="26.90">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="alergias">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/allegra120.jpg" alt="ALLEGRA 120MG 10CPR" loading="lazy" decoding="async">
+
+                    <h4>ALLEGRA 120MG 10CPR</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 53,90
+                    </div>
+
+                    <button data-product-img="img/allegra120.jpg" data-product-id="med-15" data-product-name="ALLEGRA 120MG 10CPR" data-product-price="53.90">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="alergias">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/allegra180.jpg" alt="ALLEGRA 180MG 10CPR" loading="lazy" decoding="async">
+
+                    <h4>ALLEGRA 180MG 10CPR</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 80,90
+                    </div>
+
+                    <button data-product-img="img/allegra180.jpg" data-product-id="med-16" data-product-name="ALLEGRA 180MG 10CPR" data-product-price="80.90">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="alergias">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/allegraD.jpg" alt="ALLEGRA D C/10 COMP" loading="lazy" decoding="async">
+
+                    <h4>ALLEGRA D C/10 COMP</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 66,40
+                    </div>
+
+                    <button data-product-img="img/allegraD.jpg" data-product-id="med-17" data-product-name="ALLEGRA D C/10 COMP" data-product-price="66.40">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="infantil alergias">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/allegrainf.jpg" alt="ALLEGRA INF 6MG 60ML SUSP" loading="lazy" decoding="async">
+
+                    <h4>ALLEGRA INF 6MG 60ML SUSP</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 36,10
+                    </div>
+
+                    <button data-product-img="img/allegrainf.jpg" data-product-id="med-18" data-product-name="ALLEGRA INF 6MG 60ML SUSP" data-product-price="36.10">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="infantil alergias">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/alektos.jpg" alt="ALEKTOS PED 2,5MG/ML 120ML" loading="lazy" decoding="async">
+
+                    <h4>ALEKTOS PED 2,5MG/ML 120ML</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 84,75
+                    </div>
+
+                    <button data-product-img="img/alektos.jpg" data-product-id="med-19" data-product-name="ALEKTOS PED 2,5MG/ML 120ML" data-product-price="84.75">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="homeopaticos">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/18.jpg" alt="COMPL HOM 18 CPR C/6 0" loading="lazy" decoding="async">
+
+                    <h4>COMPL HOM 18 CPR C/6 0</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 31,50
+                    </div>
+
+                    <button data-product-img="img/18.jpg" data-product-id="med-20" data-product-name="COMPL HOM 18 CPR C/6 0" data-product-price="31.50">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="homeopaticos">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/34.jpg" alt="ALMEIDA PRADO 34" loading="lazy" decoding="async">
+
+                    <h4>ALMEIDA PRADO 34</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 26,20
+                    </div>
+
+                    <button data-product-img="img/34.jpg" data-product-id="med-21" data-product-name="ALMEIDA PRADO 34" data-product-price="26.20">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="homeopaticos">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/35.jpg" alt="ALMEIDA PRADO 35" loading="lazy" decoding="async">
+
+                    <h4>ALMEIDA PRADO 35</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 24,35
+                    </div>
+
+                    <button data-product-img="img/35.jpg" data-product-id="med-22" data-product-name="ALMEIDA PRADO 35" data-product-price="24.35">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="homeopaticos">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/46.jpg" alt="ALMEIDA PRADO 46" loading="lazy" decoding="async">
+
+                    <h4>ALMEIDA PRADO 46</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 38,05
+                    </div>
+
+                    <button data-product-img="img/46.jpg" data-product-id="med-23" data-product-name="ALMEIDA PRADO 46" data-product-price="38.05">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="analgesicos">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/alginac15.jpg" alt="ALGINAC 1000MG C/15 CPRO" loading="lazy" decoding="async">
+
+                    <h4>ALGINAC 1000MG C/15 CPRO</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 34,25
+                    </div>
+
+                    <button data-product-img="img/alginac15.jpg" data-product-id="med-24" data-product-name="ALGINAC 1000MG C/15 CPRO" data-product-price="34.25">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="analgesicos">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/alginac30.jpg" alt="ALGINAC 1MG C/30 CPRO" loading="lazy" decoding="async">
+
+                    <h4>ALGINAC 1MG C/30 CPRO</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 69,35
+                    </div>
+
+                    <button data-product-img="img/alginac30.jpg" data-product-id="med-25" data-product-name="ALGINAC 1MG C/30 CPRO" data-product-price="69.35">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="cuidados-pessoais">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/andolba.jpg" alt="ANDOLBA 43G" loading="lazy" decoding="async">
+
+                    <h4>ANDOLBA 43G</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 38,10
+                    </div>
+
+                    <button data-product-img="img/andolba.jpg" data-product-id="med-26" data-product-name="ANDOLBA 43G" data-product-price="38.10">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="respiratorios">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/amome.jpg" alt="AMOME 50MCG C/60 DOSES" loading="lazy" decoding="async">
+
+                    <h4>AMOME 50MCG C/60 DOSES</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 48,80
+                    </div>
+
+                    <button data-product-img="img/amome.jpg" data-product-id="med-27" data-product-name="AMOME 50MCG C/60 DOSES" data-product-price="48.80">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="cuidados-pessoais">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/andriodermol.jpg" alt="ANDRIODERMOL LIQ 50M L" loading="lazy" decoding="async">
+
+                    <h4>ANDRIODERMOL LIQ 50M L</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 24,60
+                    </div>
+
+                    <button data-product-img="img/andriodermol.jpg" data-product-id="med-28" data-product-name="ANDRIODERMOL LIQ 50M L" data-product-price="24.60">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="circulacao">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/ancoron100.jpg" alt="ANCORON 100MG C/60 CPRO" loading="lazy" decoding="async">
+
+                    <h4>ANCORON 100MG C/60 CPRO</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 39,55
+                    </div>
+
+                    <button data-product-img="img/ancoron100.jpg" data-product-id="med-29" data-product-name="ANCORON 100MG C/60 CPRO" data-product-price="39.55">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="circulacao">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/ancoron200.jpg" alt="ANCORON 200MG 30CPR" loading="lazy" decoding="async">
+
+                    <h4>ANCORON 200MG 30CPR</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 61,10
+                    </div>
+
+                    <button data-product-img="img/ancoron200.jpg" data-product-id="med-30" data-product-name="ANCORON 200MG 30CPR" data-product-price="61.10">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="infantil antiparasitarios">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/annita20.jpg" alt="ANNITA 20MG SUS FR 45ML" loading="lazy" decoding="async">
+
+                    <h4>ANNITA 20MG SUS FR 45ML</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 30,65
+                    </div>
+
+                    <button data-product-img="img/annita20.jpg" data-product-id="med-31" data-product-name="ANNITA 20MG SUS FR 45ML" data-product-price="30.65">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="infantil antiparasitarios">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/annita100.jpg" alt="ANNITA 20MG SUS FR 1" loading="lazy" decoding="async">
+
+                    <h4>ANNITA 20MG SUS FR 1</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 66,65
+                    </div>
+
+                    <button data-product-img="img/annita100.jpg" data-product-id="med-32" data-product-name="ANNITA 20MG SUS FR 1" data-product-price="66.65">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="antiparasitarios">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/annita500.jpg" alt="ANNITA 500MG C/6 CPRO" loading="lazy" decoding="async">
+
+                    <h4>ANNITA 500MG C/6 CPRO</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 77,00
+                    </div>
+
+                    <button data-product-img="img/annita500.jpg" data-product-id="med-33" data-product-name="ANNITA 500MG C/6 CPRO" data-product-price="77.00">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="genericos circulacao">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/apixabana.jpg" alt="APIXABANA 2,5MG C/60 CPRO" loading="lazy" decoding="async">
+
+                    <h4>APIXABANA 2,5MG C/60 CPRO</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 146,75
+                    </div>
+
+                    <button data-product-img="img/apixabana.jpg" data-product-id="med-34" data-product-name="APIXABANA 2,5MG C/60 CPRO" data-product-price="146.75">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="genericos circulacao">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/apixabana5.jpg" alt="APIXABANA 5MG C/60 CPRO GENERI" loading="lazy" decoding="async">
+
+                    <h4>APIXABANA 5MG C/60 CPRO GENERI</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 141,90
+                    </div>
+
+                    <button data-product-img="img/apixabana5.jpg" data-product-id="med-35" data-product-name="APIXABANA 5MG C/60 CPRO GENERI" data-product-price="141.90">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="circulacao">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/apresolina25.jpg" alt="APRESOLINA 25MG C/20 DR" loading="lazy" decoding="async">
+
+                    <h4>APRESOLINA 25MG C/20 DR</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 9,70
+                    </div>
+
+                    <button data-product-img="img/apresolina25.jpg" data-product-id="med-36" data-product-name="APRESOLINA 25MG C/20 DR" data-product-price="9.70">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="circulacao">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/apresolina50.jpg" alt="APRESOLINA 50MG C/20 COMP" loading="lazy" decoding="async">
+
+                    <h4>APRESOLINA 50MG C/20 COMP</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 12,95
+                    </div>
+
+                    <button data-product-img="img/apresolina50.jpg" data-product-id="med-37" data-product-name="APRESOLINA 50MG C/20 COMP" data-product-price="12.95">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="circulacao">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/apresolina60.jpg" alt="APRESOLINA 50MG C/60 COMP REV" loading="lazy" decoding="async">
+
+                    <h4>APRESOLINA 50MG C/60 COMP REV</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 38,90
+                    </div>
+
+                    <button data-product-img="img/apresolina60.jpg" data-product-id="med-38" data-product-name="APRESOLINA 50MG C/60 COMP REV" data-product-price="38.90">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="circulacao">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/aradois25.jpg" alt="ARADOIS 25MG C/30 CPRO" loading="lazy" decoding="async">
+
+                    <h4>ARADOIS 25MG C/30 CPRO</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 54,75
+                    </div>
+
+                    <button data-product-img="img/aradois25.jpg" data-product-id="med-39" data-product-name="ARADOIS 25MG C/30 CPRO" data-product-price="54.75">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="circulacao">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/aradois50.jpg" alt="ARADOIS 50MG C/30 CPRO" loading="lazy" decoding="async">
+
+                    <h4>ARADOIS 50MG C/30 CPRO</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 52,55
+                    </div>
+
+                    <button data-product-img="img/aradois50.jpg" data-product-id="med-40" data-product-name="ARADOIS 50MG C/30 CPRO" data-product-price="52.55">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="circulacao">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/aradois60.jpg" alt="ARADOIS 50MG C/60CP CAIXA" loading="lazy" decoding="async">
+
+                    <h4>ARADOIS 50MG C/60CP CAIXA</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 92,00
+                    </div>
+
+                    <button data-product-img="img/aradois60.jpg" data-product-id="med-41" data-product-name="ARADOIS 50MG C/60CP CAIXA" data-product-price="92.00">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="circulacao">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/aradois5012.jpg" alt="ARADOIS H 50/12,5 MG C/90 CPRO" loading="lazy" decoding="async">
+
+                    <h4>ARADOIS H 50/12,5 MG C/90 CPRO</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 182,95
+                    </div>
+
+                    <button data-product-img="img/aradois5012.jpg" data-product-id="med-42" data-product-name="ARADOIS H 50/12,5 MG C/90 CPRO" data-product-price="182.95">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="analgesicos">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/artosil150.jpg" alt="ARTROSIL 160MG C/10 CAPS" loading="lazy" decoding="async">
+
+                    <h4>ARTROSIL 160MG C/10 CAPS</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 36,95
+                    </div>
+
+                    <button data-product-img="img/artosil150.jpg" data-product-id="med-43" data-product-name="ARTROSIL 160MG C/10 CAPS" data-product-price="36.95">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="circulacao">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/aspirina.jpg" alt="ASPIRINA PREVENT 100" loading="lazy" decoding="async">
+
+                    <h4>ASPIRINA PREVENT 100</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 22,30
+                    </div>
+
+                    <button data-product-img="img/aspirina.jpg" data-product-id="med-44" data-product-name="ASPIRINA PREVENT 100" data-product-price="22.30">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="circulacao">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/atensina.jpg" alt="ATENSINA 100MCG C/30 CPRO" loading="lazy" decoding="async">
+
+                    <h4>ATENSINA 100MCG C/30 CPRO</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 9,80
+                    </div>
+
+                    <button data-product-img="img/atensina.jpg" data-product-id="med-45" data-product-name="ATENSINA 100MCG C/30 CPRO" data-product-price="9.80">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="circulacao">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/atensina150.jpg" alt="ATENSINA 0,150MG C/30" loading="lazy" decoding="async">
+
+                    <h4>ATENSINA 0,150MG C/30</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 12,30
+                    </div>
+
+                    <button data-product-img="img/atensina150.jpg" data-product-id="med-46" data-product-name="ATENSINA 0,150MG C/30" data-product-price="12.30">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="respiratorios">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/atrovent.jpg" alt="ATROVENT SOL 20ML" loading="lazy" decoding="async">
+
+                    <h4>ATROVENT SOL 20ML</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 29,10
+                    </div>
+
+                    <button data-product-img="img/atrovent.jpg" data-product-id="med-47" data-product-name="ATROVENT SOL 20ML" data-product-price="29.10">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="respiratorios">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/avamys.jpg" alt="AVAMYS 27,5MCG SPRAY NASAL" loading="lazy" decoding="async">
+
+                    <h4>AVAMYS 27,5MCG SPRAY NASAL</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 69,35
+                    </div>
+
+                    <button data-product-img="img/avamys.jpg" data-product-id="med-48" data-product-name="AVAMYS 27,5MCG SPRAY NASAL" data-product-price="69.35">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="digestivos">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/avide.jpg" alt="AVIDE 100MG C/9" loading="lazy" decoding="async">
+
+                    <h4>AVIDE 100MG C/9</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 51,25
+                    </div>
+
+                    <button data-product-img="img/avide.jpg" data-product-id="med-49" data-product-name="AVIDE 100MG C/9" data-product-price="51.25">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="metabolismo">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/azukon.jpg" alt="AZUKON MR 30MG 30CPR" loading="lazy" decoding="async">
+
+                    <h4>AZUKON MR 30MG 30CPR</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 22,80
+                    </div>
+
+                    <button data-product-img="img/azukon.jpg" data-product-id="med-50" data-product-name="AZUKON MR 30MG 30CPR" data-product-price="22.80">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="metabolismo">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/azukon60.jpg" alt="AZUKON MR 30MG C/60 COMP" loading="lazy" decoding="async">
+
+                    <h4>AZUKON MR 30MG C/60 COMP</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 43,40
+                    </div>
+
+                    <button data-product-img="img/azukon60.jpg" data-product-id="med-51" data-product-name="AZUKON MR 30MG C/60 COMP" data-product-price="43.40">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="respiratorios">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/bamifix.jpg" alt="BAMIFIX 300MG 20DRG" loading="lazy" decoding="async">
+
+                    <h4>BAMIFIX 300MG 20DRG</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 42,15
+                    </div>
+
+                    <button data-product-img="img/bamifix.jpg" data-product-id="med-52" data-product-name="BAMIFIX 300MG 20DRG" data-product-price="42.15">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="circulacao">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/brasart160.jpg" alt="BRASART 160MG 30CPR" loading="lazy" decoding="async">
+
+                    <h4>BRASART 160MG 30CPR</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 50,70
+                    </div>
+
+                    <button data-product-img="img/brasart160.jpg" data-product-id="med-53" data-product-name="BRASART 160MG 30CPR" data-product-price="50.70">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="circulacao">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/brasart16025.jpg" alt="BRASART HCT 160+25MG C/30 CPRO" loading="lazy" decoding="async">
+
+                    <h4>BRASART HCT 160+25MG C/30 CPRO</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 109,60
+                    </div>
+
+                    <button data-product-img="img/brasart16025.jpg" data-product-id="med-54" data-product-name="BRASART HCT 160+25MG C/30 CPRO" data-product-price="109.60">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="circulacao">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/brasart32025.jpg" alt="BRASART HCT 320/25MG 30CP" loading="lazy" decoding="async">
+
+                    <h4>BRASART HCT 320/25MG 30CP</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 111,05
+                    </div>
+
+                    <button data-product-img="img/brasart32025.jpg" data-product-id="med-55" data-product-name="BRASART HCT 320/25MG 30CP" data-product-price="111.05">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="circulacao">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/benicar.jpg" alt="BENICAR HCT 40/25MG" loading="lazy" decoding="async">
+
+                    <h4>BENICAR HCT 40/25MG</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 102,35
+                    </div>
+
+                    <button data-product-img="img/benicar.jpg" data-product-id="med-56" data-product-name="BENICAR HCT 40/25MG" data-product-price="102.35">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="vitaminas">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/benerva.jpg" alt="BENERVA 300MG C/30 CPR" loading="lazy" decoding="async">
+
+                    <h4>BENERVA 300MG C/30 CPR</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 32,05
+                    </div>
+
+                    <button data-product-img="img/benerva.jpg" data-product-id="med-57" data-product-name="BENERVA 300MG C/30 CPR" data-product-price="32.05">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="respiratorios">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/benegrip.jpg" alt="BENEGRIP MULTI 240ML" loading="lazy" decoding="async">
+
+                    <h4>BENEGRIP MULTI 240ML</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 40,50
+                    </div>
+
+                    <button data-product-img="img/benegrip.jpg" data-product-id="med-58" data-product-name="BENEGRIP MULTI 240ML" data-product-price="40.50">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="respiratorios">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/berotec.jpg" alt="BEROTEC AERO 100MCG 10ML" loading="lazy" decoding="async">
+
+                    <h4>BEROTEC AERO 100MCG 10ML</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 32,30
+                    </div>
+
+                    <button data-product-img="img/berotec.jpg" data-product-id="med-59" data-product-name="BEROTEC AERO 100MCG 10ML" data-product-price="32.30">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="analgesicos">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/beserol4.jpg" alt="BESEROL 4CPR" loading="lazy" decoding="async">
+
+                    <h4>BESEROL 4CPR</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 7,65
+                    </div>
+
+                    <button data-product-img="img/beserol4.jpg" data-product-id="med-60" data-product-name="BESEROL 4CPR" data-product-price="7.65">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="analgesicos">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/beserol12.jpg" alt="BESEROL C/12 CPRO" loading="lazy" decoding="async">
+
+                    <h4>BESEROL C/12 CPRO</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 23,70
+                    </div>
+
+                    <button data-product-img="img/beserol12.jpg" data-product-id="med-61" data-product-name="BESEROL C/12 CPRO" data-product-price="23.70">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="analgesicos">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/bexai.jpg" alt="BEXAI 35MG C/10CAPS CAIXA" loading="lazy" decoding="async">
+
+                    <h4>BEXAI 35MG C/10CAPS CAIXA</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 76,00
+                    </div>
+
+                    <button data-product-img="img/bexai.jpg" data-product-id="med-62" data-product-name="BEXAI 35MG C/10CAPS CAIXA" data-product-price="76.00">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="vitaminas">
+
+                    <span class="discount">-14%</span>
+
+                    <img src="img/biotonico.jpg" alt="BIOTONICO 400ML TRADICIONAL" loading="lazy" decoding="async">
+
+                    <h4>BIOTONICO 400ML TRADICIONAL</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 45,50
+                    </div>
+
+                    <button data-product-img="img/biotonico.jpg" data-product-id="med-63" data-product-name="BIOTONICO 400ML TRADICIONAL" data-product-price="45.50">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="vitaminas infantil">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/biozinc.jpg" alt="BIOZINC KIDS 75ML" loading="lazy" decoding="async">
+
+                    <h4>BIOZINC KIDS 75ML</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 54,80
+                    </div>
+
+                    <button data-product-img="img/biozinc.jpg" data-product-id="med-64" data-product-name="BIOZINC KIDS 75ML" data-product-price="54.80">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="respiratorios">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/blumel.jpg" alt="BLUMEL 15MG/ML XPE FR 100ML" loading="lazy" decoding="async">
+
+                    <h4>BLUMEL 15MG/ML XPE FR 100ML</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 35,60
+                    </div>
+
+                    <button data-product-img="img/blumel.jpg" data-product-id="med-65" data-product-name="BLUMEL 15MG/ML XPE FR 100ML" data-product-price="35.60">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="digestivos">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/buclina.jpg" alt="BUCLINA C/30CP" loading="lazy" decoding="async">
+
+                    <h4>BUCLINA C/30CP</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 19,50
+                    </div>
+
+                    <button data-product-img="img/buclina.jpg" data-product-id="med-66" data-product-name="BUCLINA C/30CP" data-product-price="19.50">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="digestivos">
+
+
+                    <img src="img/buscopansimples.jpg" alt="BUSCOPAN C/20DRAG SIMPLES" loading="lazy" decoding="async">
+
+                    <h4>BUSCOPAN C/20DRAG SIMPLES</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 29,50
+                    </div>
+
+                    <button data-product-img="img/buscopansimples.jpg" data-product-id="med-67" data-product-name="BUSCOPAN C/20DRAG SIMPLES" data-product-price="29.50">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="digestivos">
+
+                    <span class="discount">-2%</span>
+
+                    <img src="img/buscopancompogotas.jpg" alt="BUSCOPAN COMPOSTO GTS 20ML" loading="lazy" decoding="async">
+
+                    <h4>BUSCOPAN COMPOSTO GTS 20ML</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 30,00
+                    </div>
+
+                    <button data-product-img="img/buscopancompogotas.jpg" data-product-id="med-68" data-product-name="BUSCOPAN COMPOSTO GTS 20ML" data-product-price="30.00">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="digestivos">
+
+
+                    <img src="img/buscopancomposto.jpg" alt="BUSCOPAN COMPOSTO C/20CP" loading="lazy" decoding="async">
+
+                    <h4>BUSCOPAN COMPOSTO C/20CP</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 29,50
+                    </div>
+
+                    <button data-product-img="img/buscopancomposto.jpg" data-product-id="med-69" data-product-name="BUSCOPAN COMPOSTO C/20CP" data-product-price="29.50">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="digestivos">
+
+
+                    <img src="img/neocopangotas.jpg" alt="NEOCOPAN COMPOSTO 10ML GOTAS" loading="lazy" decoding="async">
+
+                    <h4>NEOCOPAN COMPOSTO 10ML GOTAS</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 16,85
+                    </div>
+
+                    <button data-product-img="img/neocopangotas.jpg" data-product-id="med-70" data-product-name="NEOCOPAN COMPOSTO 10ML GOTAS" data-product-price="16.85">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="digestivos">
+
+
+                    <img src="img/neocopan.jpg" alt="NEOCOPAN COMPOSTO C/20CP" loading="lazy" decoding="async">
+
+                    <h4>NEOCOPAN COMPOSTO C/20CP</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 20,90
+                    </div>
+
+                    <button data-product-img="img/neocopan.jpg" data-product-id="med-71" data-product-name="NEOCOPAN COMPOSTO C/20CP" data-product-price="20.90">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="infantil digestivos">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/buscopanped.jpg" alt="BUSCOPAN GTS 20ML PEDIATRICO" loading="lazy" decoding="async">
+
+                    <h4>BUSCOPAN GTS 20ML PEDIATRICO</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 28,80
+                    </div>
+
+                    <button data-product-img="img/buscopanped.jpg" data-product-id="med-72" data-product-name="BUSCOPAN GTS 20ML PEDIATRICO" data-product-price="28.80">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="respiratorios">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/busonid32.jpg" alt="BUSONID NASAL 32MCG 120DOSES" loading="lazy" decoding="async">
+
+                    <h4>BUSONID NASAL 32MCG 120DOSES</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 29,95
+                    </div>
+
+                    <button data-product-img="img/busonid32.jpg" data-product-id="med-73" data-product-name="BUSONID NASAL 32MCG 120DOSES" data-product-price="29.95">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="respiratorios">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/busonid50.jpg" alt="BUSONID NASAL 50MCG 120DOSES" loading="lazy" decoding="async">
+
+                    <h4>BUSONID NASAL 50MCG 120DOSES</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 43,95
+                    </div>
+
+                    <button data-product-img="img/busonid50.jpg" data-product-id="med-74" data-product-name="BUSONID NASAL 50MCG 120DOSES" data-product-price="43.95">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="respiratorios">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/busonid64.jpg" alt="BUSONID NASAL 64MCG 120DOSES" loading="lazy" decoding="async">
+
+                    <h4>BUSONID NASAL 64MCG 120DOSES</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 34,40
+                    </div>
+
+                    <button data-product-img="img/busonid64.jpg" data-product-id="med-75" data-product-name="BUSONID NASAL 64MCG 120DOSES" data-product-price="34.40">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="infantil">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/camomilina.jpg" alt="CAMOMILINA C 20CAPS" loading="lazy" decoding="async">
+
+                    <h4>CAMOMILINA C 20CAPS</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 61,05
+                    </div>
+
+                    <button data-product-img="img/camomilina.jpg" data-product-id="med-76" data-product-name="CAMOMILINA C 20CAPS" data-product-price="61.05">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="cuidados-pessoais">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/candicort.jpg" alt="CANDICORT POM 30G" loading="lazy" decoding="async">
+
+                    <h4>CANDICORT POM 30G</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 42,90
+                    </div>
+
+                    <button data-product-img="img/candicort.jpg" data-product-id="med-77" data-product-name="CANDICORT POM 30G" data-product-price="42.90">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="cuidados-pessoais">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/candicortcr.jpg" alt="CANDICORT CR 30G" loading="lazy" decoding="async">
+
+                    <h4>CANDICORT CR 30G</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 42,90
+                    </div>
+
+                    <button data-product-img="img/candicortcr.jpg" data-product-id="med-78" data-product-name="CANDICORT CR 30G" data-product-price="42.90">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="cuidados-pessoais">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/canestencr.jpg" alt="CANESTEN CR 20G" loading="lazy" decoding="async">
+
+                    <h4>CANESTEN CR 20G</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 32,40
+                    </div>
+
+                    <button data-product-img="img/canestencr.jpg" data-product-id="med-79" data-product-name="CANESTEN CR 20G" data-product-price="32.40">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="cuidados-pessoais">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/canestensolu.jpg" alt="CANESTEN SOLUCAO 30ML" loading="lazy" decoding="async">
+
+                    <h4>CANESTEN SOLUCAO 30ML</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 44,25
+                    </div>
+
+                    <button data-product-img="img/canestensolu.jpg" data-product-id="med-80" data-product-name="CANESTEN SOLUCAO 30ML" data-product-price="44.25">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="analgesicos">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/cataflem50.jpg" alt="CATAFLAM 50MG C/10CP" loading="lazy" decoding="async">
+
+                    <h4>CATAFLAM 50MG C/10CP</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 26,50
+                    </div>
+
+                    <button data-product-img="img/cataflem50.jpg" data-product-id="med-81" data-product-name="CATAFLAM 50MG C/10CP" data-product-price="26.50">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="analgesicos">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/cataflampropoma.jpg" alt="CATAFLAMPRO 11,6MG EMULGEL 60G" loading="lazy" decoding="async">
+
+                    <h4>CATAFLAMPRO 11,6MG EMULGEL 60G</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 50,40
+                    </div>
+
+                    <button data-product-img="img/cataflampropoma.jpg" data-product-id="med-82" data-product-name="CATAFLAMPRO 11,6MG EMULGEL 60G" data-product-price="50.40">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="analgesicos">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/cataflamxt.jpg" alt="CATAFLAMPRO XT 12HO RAS 50G" loading="lazy" decoding="async">
+
+                    <h4>CATAFLAMPRO XT 12HO RAS 50G</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 62,35
+                    </div>
+
+                    <button data-product-img="img/cataflamxt.jpg" data-product-id="med-83" data-product-name="CATAFLAMPRO XT 12HO RAS 50G" data-product-price="62.35">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="analgesicos">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/cefaliv.jpg" alt="CEFALIV C/12 CPRO" loading="lazy" decoding="async">
+
+                    <h4>CEFALIV C/12 CPRO</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 21,00
+                    </div>
+
+                    <button data-product-img="img/cefaliv.jpg" data-product-id="med-84" data-product-name="CEFALIV C/12 CPRO" data-product-price="21.00">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="cuidados-pessoais infantil">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/cetrilan.jpg" alt="CETRILAN CR PROTETOR 0,2 40G" loading="lazy" decoding="async">
+
+                    <h4>CETRILAN CR PROTETOR 0,2 40G</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 36,95
+                    </div>
+
+                    <button data-product-img="img/cetrilan.jpg" data-product-id="med-85" data-product-name="CETRILAN CR PROTETOR 0,2 40G" data-product-price="36.95">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="cuidados-pessoais higiene">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/aceratumsol.jpg" alt="ACERATUM SOL OTO GTS FR 10ML" loading="lazy" decoding="async">
+
+                    <h4>ACERATUM SOL OTO GTS FR 10ML</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 22,85
+                    </div>
+
+                    <button data-product-img="img/aceratumsol.jpg" data-product-id="med-86" data-product-name="ACERATUM SOL OTO GTS FR 10ML" data-product-price="22.85">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="cuidados-pessoais higiene">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/cerumin.jpg" alt="CERUMIN 8ML" loading="lazy" decoding="async">
+
+                    <h4>CERUMIN 8ML</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 26,95
+                    </div>
+
+                    <button data-product-img="img/cerumin.jpg" data-product-id="med-87" data-product-name="CERUMIN 8ML" data-product-price="26.95">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="cuidados-pessoais">
+
+                    <span class="discount">-30%</span>
+
+                    <img src="img/ciclapast.jpg" alt="CICAPLAST B5 PLUS 20 ML-DEMAIS" loading="lazy" decoding="async">
+
+                    <h4>CICAPLAST B5 PLUS 20 ML-DEMAIS</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 57,00
+                    </div>
+
+                    <button data-product-img="img/ciclapast.jpg" data-product-id="med-88" data-product-name="CICAPLAST B5 PLUS 20 ML-DEMAIS" data-product-price="57.00">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="vitaminas">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/citoneurim1000.jpg" alt="CITONEURIN CONTROL 1000 C/30" loading="lazy" decoding="async">
+
+                    <h4>CITONEURIN CONTROL 1000 C/30</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 75,70
+                    </div>
+
+                    <button data-product-img="img/citoneurim1000.jpg" data-product-id="med-89" data-product-name="CITONEURIN CONTROL 1000 C/30" data-product-price="75.70">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="vitaminas">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/citoneurin5000.jpg" alt="CITONEURIN 5000MCG C/30" loading="lazy" decoding="async">
+
+                    <h4>CITONEURIN 5000MCG C/30</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 91,85
+                    </div>
+
+                    <button data-product-img="img/citoneurin5000.jpg" data-product-id="med-90" data-product-name="CITONEURIN 5000MCG C/30" data-product-price="91.85">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="vitaminas">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/cobi12.jpg" alt="COBI-12 1000MCG C/30 COMP SUBL" loading="lazy" decoding="async">
+
+                    <h4>COBI-12 1000MCG C/30 COMP SUBL</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 31,55
+                    </div>
+
+                    <button data-product-img="img/cobi12.jpg" data-product-id="med-91" data-product-name="COBI-12 1000MCG C/30 COMP SUBL" data-product-price="31.55">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="digestivos">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/cobavital30.jpg" alt="COBAVITAL C/30CP CAIXA" loading="lazy" decoding="async">
+
+                    <h4>COBAVITAL C/30CP CAIXA</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 43,60
+                    </div>
+
+                    <button data-product-img="img/cobavital30.jpg" data-product-id="med-92" data-product-name="COBAVITAL C/30CP CAIXA" data-product-price="43.60">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="digestivos">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/cobavital16.jpg" alt="COBAVITAL 16CPR" loading="lazy" decoding="async">
+
+                    <h4>COBAVITAL 16CPR</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 27,50
+                    </div>
+
+                    <button data-product-img="img/cobavital16.jpg" data-product-id="med-93" data-product-name="COBAVITAL 16CPR" data-product-price="27.50">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="vitaminas">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/combiron.jpg" alt="COMBIRON FOLICO C/45 CPRO" loading="lazy" decoding="async">
+
+                    <h4>COMBIRON FOLICO C/45 CPRO</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 43,85
+                    </div>
+
+                    <button data-product-img="img/combiron.jpg" data-product-id="med-94" data-product-name="COMBIRON FOLICO C/45 CPRO" data-product-price="43.85">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="circulacao">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/concor125.jpg" alt="CONCOR 1,25MG C/30 CPRO" loading="lazy" decoding="async">
+
+                    <h4>CONCOR 1,25MG C/30 CPRO</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 72,75
+                    </div>
+
+                    <button data-product-img="img/concor125.jpg" data-product-id="med-95" data-product-name="CONCOR 1,25MG C/30 CPRO" data-product-price="72.75">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="circulacao">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/concor10.jpg" alt="CONCOR 10MG C/30 COMP" loading="lazy" decoding="async">
+
+                    <h4>CONCOR 10MG C/30 COMP</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 116,10
+                    </div>
+
+                    <button data-product-img="img/concor10.jpg" data-product-id="med-96" data-product-name="CONCOR 10MG C/30 COMP" data-product-price="116.10">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="respiratorios">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/clenila.jpg" alt="CLENIL A 400MG C/10 FLACONETES" loading="lazy" decoding="async">
+
+                    <h4>CLENIL A 400MG C/10 FLACONETES</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 84,90
+                    </div>
+
+                    <button data-product-img="img/clenila.jpg" data-product-id="med-97" data-product-name="CLENIL A 400MG C/10 FLACONETES" data-product-price="84.90">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="circulacao">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/cordarex25.jpg" alt="CORDAREX 2,5MG 30CPR" loading="lazy" decoding="async">
+
+                    <h4>CORDAREX 2,5MG 30CPR</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 36,55
+                    </div>
+
+                    <button data-product-img="img/cordarex25.jpg" data-product-id="med-98" data-product-name="CORDAREX 2,5MG 30CPR" data-product-price="36.55">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="circulacao">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/corus50.jpg" alt="CORUS 50MG C/30 CPRO" loading="lazy" decoding="async">
+
+                    <h4>CORUS 50MG C/30 CPRO</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 13,90
+                    </div>
+
+                    <button data-product-img="img/corus50.jpg" data-product-id="med-99" data-product-name="CORUS 50MG C/30 CPRO" data-product-price="13.90">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="circulacao">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/clorana25.jpg" alt="CLORANA 25MG C/30 CPRO" loading="lazy" decoding="async">
+
+                    <h4>CLORANA 25MG C/30 CPRO</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 14,75
+                    </div>
+
+                    <button data-product-img="img/clorana25.jpg" data-product-id="med-100" data-product-name="CLORANA 25MG C/30 CPRO" data-product-price="14.75">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="circulacao">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/clorana50.jpg" alt="CLORANA 50MG 20CPR" loading="lazy" decoding="async">
+
+                    <h4>CLORANA 50MG 20CPR</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 15,20
+                    </div>
+
+                    <button data-product-img="img/clorana50.jpg" data-product-id="med-101" data-product-name="CLORANA 50MG 20CPR" data-product-price="15.20">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="circulacao">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/clopin75.jpg" alt="CLOPIN 75MG C/30 CPR" loading="lazy" decoding="async">
+
+                    <h4>CLOPIN 75MG C/30 CPR</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 72,30
+                    </div>
+
+                    <button data-product-img="img/clopin75.jpg" data-product-id="med-102" data-product-name="CLOPIN 75MG C/30 CPR" data-product-price="72.30">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="articulacoes">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/condroflex.jpg" alt="CONDROFLEX 500+400MG C/90 CAPS" loading="lazy" decoding="async">
+
+                    <h4>CONDROFLEX 500+400MG C/90 CAPS</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 196,85
+                    </div>
+
+                    <button data-product-img="img/condroflex.jpg" data-product-id="med-103" data-product-name="CONDROFLEX 500+400MG C/90 CAPS" data-product-price="196.85">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="vitaminas">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/cronobe.jpg" alt="CRONOBE COMPLEX 100+ 100+5MG 3" loading="lazy" decoding="async">
+
+                    <h4>CRONOBE COMPLEX 100+ 100+5MG 3</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 88,55
+                    </div>
+
+                    <button data-product-img="img/cronobe.jpg" data-product-id="med-104" data-product-name="CRONOBE COMPLEX 100+ 100+5MG 3" data-product-price="88.55">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="circulacao">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/daflon500.jpg" alt="DAFLON 500MG 30CPR" loading="lazy" decoding="async">
+
+                    <h4>DAFLON 500MG 30CPR</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 124,55
+                    </div>
+
+                    <button data-product-img="img/daflon500.jpg" data-product-id="med-105" data-product-name="DAFLON 500MG 30CPR" data-product-price="124.55">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="circulacao">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/daflon1000.jpg" alt="DAFLON 1000MG C/30CP SERVIER" loading="lazy" decoding="async">
+
+                    <h4>DAFLON 1000MG C/30CP SERVIER</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 176,75
+                    </div>
+
+                    <button data-product-img="img/daflon1000.jpg" data-product-id="med-106" data-product-name="DAFLON 1000MG C/30CP SERVIER" data-product-price="176.75">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="infantil digestivos">
+
+                    <span class="discount">-13%</span>
+
+                    <img src="img/draminb6gotas.jpg" alt="DRAMIN B6 GTS PED 30 ML" loading="lazy" decoding="async">
+
+                    <h4>DRAMIN B6 GTS PED 30 ML</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 22,00
+                    </div>
+
+                    <button data-product-img="img/draminb6gotas.jpg" data-product-id="med-107" data-product-name="DRAMIN B6 GTS PED 30 ML" data-product-price="22.00">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="digestivos">
+
+                    <span class="discount">-3%</span>
+
+                    <img src="img/draminb6.jpg" alt="DRAMIN B6 C/30 COMP" loading="lazy" decoding="async">
+
+                    <h4>DRAMIN B6 C/30 COMP</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 25,00
+                    </div>
+
+                    <button data-product-img="img/draminb6.jpg" data-product-id="med-108" data-product-name="DRAMIN B6 C/30 COMP" data-product-price="25.00">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="digestivos">
+
+                    <span class="discount">-2%</span>
+
+                    <img src="img/dramin50.jpg" alt="DRAMIN 50MG C/10 CAPS" loading="lazy" decoding="async">
+
+                    <h4>DRAMIN 50MG C/10 CAPS</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 24,00
+                    </div>
+
+                    <button data-product-img="img/dramin50.jpg" data-product-id="med-109" data-product-name="DRAMIN 50MG C/10 CAPS" data-product-price="24.00">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="respiratorios">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/decontosse.jpg" alt="DECONTOSSE 40MG/ML SUSP 100ML" loading="lazy" decoding="async">
+
+                    <h4>DECONTOSSE 40MG/ML SUSP 100ML</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 28,15
+                    </div>
+
+                    <button data-product-img="img/decontosse.jpg" data-product-id="med-110" data-product-name="DECONTOSSE 40MG/ML SUSP 100ML" data-product-price="28.15">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="respiratorios">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/decongexplus.jpg" alt="DECONGEX PLUS XPE 12 0ML" loading="lazy" decoding="async">
+
+                    <h4>DECONGEX PLUS XPE 12 0ML</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 25,40
+                    </div>
+
+                    <button data-product-img="img/decongexplus.jpg" data-product-id="med-111" data-product-name="DECONGEX PLUS XPE 12 0ML" data-product-price="25.40">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="respiratorios">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/decongexgotas_.jpg" alt="DECONGEX PLUS GTS 20 ML" loading="lazy" decoding="async">
+
+                    <h4>DECONGEX PLUS GTS 20 ML</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 17,25
+                    </div>
+
+                    <button data-product-img="img/decongexgotas_.jpg" data-product-id="med-112" data-product-name="DECONGEX PLUS GTS 20 ML" data-product-price="17.25">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="analgesicos">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/decador05.jpg" alt="DECADRON 0,5MG C/20 CPRO" loading="lazy" decoding="async">
+
+                    <h4>DECADRON 0,5MG C/20 CPRO</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 11,55
+                    </div>
+
+                    <button data-product-img="img/decador05.jpg" data-product-id="med-113" data-product-name="DECADRON 0,5MG C/20 CPRO" data-product-price="11.55">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="analgesicos">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/decadron075.jpg" alt="DECADRON 0,75MG C/20 COMP" loading="lazy" decoding="async">
+
+                    <h4>DECADRON 0,75MG C/20 COMP</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 14,45
+                    </div>
+
+                    <button data-product-img="img/decadron075.jpg" data-product-id="med-114" data-product-name="DECADRON 0,75MG C/20 COMP" data-product-price="14.45">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="analgesicos">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/decadron4.jpg" alt="DECADRON 4MG C/10 CPRO" loading="lazy" decoding="async">
+
+                    <h4>DECADRON 4MG C/10 CPRO</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 24,25
+                    </div>
+
+                    <button data-product-img="img/decadron4.jpg" data-product-id="med-115" data-product-name="DECADRON 4MG C/10 CPRO" data-product-price="24.25">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="analgesicos">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/decadronelixir.jpg" alt="DECADRON ELIXIR 120M" loading="lazy" decoding="async">
+
+                    <h4>DECADRON ELIXIR 120M</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 33,70
+                    </div>
+
+                    <button data-product-img="img/decadronelixir.jpg" data-product-id="med-116" data-product-name="DECADRON ELIXIR 120M" data-product-price="33.70">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="digestivos">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/dexilant.jpg" alt="DEXILANT 60MG CPS C/30" loading="lazy" decoding="async">
+
+                    <h4>DEXILANT 60MG CPS C/30</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 121,15
+                    </div>
+
+                    <button data-product-img="img/dexilant.jpg" data-product-id="med-117" data-product-name="DEXILANT 60MG CPS C/30" data-product-price="121.15">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="analgesicos">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/dexador.jpg" alt="DEXADOR 5000MCG 20CP" loading="lazy" decoding="async">
+
+                    <h4>DEXADOR 5000MCG 20CP</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 73,45
+                    </div>
+
+                    <button data-product-img="img/dexador.jpg" data-product-id="med-118" data-product-name="DEXADOR 5000MCG 20CP" data-product-price="73.45">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="vitaminas">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/dexfer.jpg" alt="DEXFER 100MG/ML 30ML" loading="lazy" decoding="async">
+
+                    <h4>DEXFER 100MG/ML 30ML</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 53,60
+                    </div>
+
+                    <button data-product-img="img/dexfer.jpg" data-product-id="med-119" data-product-name="DEXFER 100MG/ML 30ML" data-product-price="53.60">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="vitaminas">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/dexfer400.jpg" alt="DEXFER 400MG 30CP REV" loading="lazy" decoding="async">
+
+                    <h4>DEXFER 400MG 30CP REV</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 62,75
+                    </div>
+
+                    <button data-product-img="img/dexfer400.jpg" data-product-id="med-120" data-product-name="DEXFER 400MG 30CP REV" data-product-price="62.75">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="digestivos">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/digeplus.jpg" alt="DIGEPLUS C/30 CAPS" loading="lazy" decoding="async">
+
+                    <h4>DIGEPLUS C/30 CAPS</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 50,80
+                    </div>
+
+                    <button data-product-img="img/digeplus.jpg" data-product-id="med-121" data-product-name="DIGEPLUS C/30 CAPS" data-product-price="50.80">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="cuidados-pessoais">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/diprosalic.jpg" alt="DIPROSALIC SOL 30ML" loading="lazy" decoding="async">
+
+                    <h4>DIPROSALIC SOL 30ML</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 51,60
+                    </div>
+
+                    <button data-product-img="img/diprosalic.jpg" data-product-id="med-122" data-product-name="DIPROSALIC SOL 30ML" data-product-price="51.60">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="cuidados-pessoais">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/diprosalicpoma.jpg" alt="DIPROSALIC POM 30G" loading="lazy" decoding="async">
+
+                    <h4>DIPROSALIC POM 30G</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 41,50
+                    </div>
+
+                    <button data-product-img="img/diprosalicpoma.jpg" data-product-id="med-123" data-product-name="DIPROSALIC POM 30G" data-product-price="41.50">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="analgesicos">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/dolamin125.jpg" alt="DOLAMIN 125MG 16CPR" loading="lazy" decoding="async">
+
+                    <h4>DOLAMIN 125MG 16CPR</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 32,35
+                    </div>
+
+                    <button data-product-img="img/dolamin125.jpg" data-product-id="med-124" data-product-name="DOLAMIN 125MG 16CPR" data-product-price="32.35">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="analgesicos">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/dolaminflex.jpg" alt="DOLAMIN FLEX 125/5MG C/12CP" loading="lazy" decoding="async">
+
+                    <h4>DOLAMIN FLEX 125/5MG C/12CP</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 50,10
+                    </div>
+
+                    <button data-product-img="img/dolaminflex.jpg" data-product-id="med-125" data-product-name="DOLAMIN FLEX 125/5MG C/12CP" data-product-price="50.10">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="analgesicos">
+
+
+                    <img src="img/dorflex36.jpg" alt="DORFLEX C/36 CPRO" loading="lazy" decoding="async">
+
+                    <h4>DORFLEX C/36 CPRO</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 24,95
+                    </div>
+
+                    <button data-product-img="img/dorflex36.jpg" data-product-id="med-126" data-product-name="DORFLEX C/36 CPRO" data-product-price="24.95">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="circulacao">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/diacqua.jpg" alt="DIACQUA 25MG 30CPR" loading="lazy" decoding="async">
+
+                    <h4>DIACQUA 25MG 30CPR</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 27,30
+                    </div>
+
+                    <button data-product-img="img/diacqua.jpg" data-product-id="med-127" data-product-name="DIACQUA 25MG 30CPR" data-product-price="27.30">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="analgesicos">
+
+
+                    <img src="img/dorflexgotas.jpg" alt="DORFLEX 20ML GOTAS" loading="lazy" decoding="async">
+
+                    <h4>DORFLEX 20ML GOTAS</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 27,55
+                    </div>
+
+                    <button data-product-img="img/dorflexgotas.jpg" data-product-id="med-128" data-product-name="DORFLEX 20ML GOTAS" data-product-price="27.55">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="analgesicos">
+
+
+                    <img src="img/dorflexuno.jpg" alt="DORFLEX UNO C/10CP ENXAQUECA C" loading="lazy" decoding="async">
+
+                    <h4>DORFLEX UNO C/10CP ENXAQUECA C</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 19,40
+                    </div>
+
+                    <button data-product-img="img/dorflexuno.jpg" data-product-id="med-129" data-product-name="DORFLEX UNO C/10CP ENXAQUECA C" data-product-price="19.40">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="analgesicos">
+
+
+                    <img src="img/dorflexmax.jpg" alt="DORFLEX MAX C/8 CPRO" loading="lazy" decoding="async">
+
+                    <h4>DORFLEX MAX C/8 CPRO</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 17,65
+                    </div>
+
+                    <button data-product-img="img/dorflexmax.jpg" data-product-id="med-130" data-product-name="DORFLEX MAX C/8 CPRO" data-product-price="17.65">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="saude-intima">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/dutam.jfif" alt="DUTAM 0,5/0,4 MG C/30 CAPS" loading="lazy" decoding="async">
+
+                    <h4>DUTAM 0,5/0,4 MG C/30 CAPS</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 114,40
+                    </div>
+
+                    <button data-product-img="img/dutam.jfif" data-product-id="med-131" data-product-name="DUTAM 0,5/0,4 MG C/30 CAPS" data-product-price="114.40">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="circulacao">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/entresto.jfif" alt="ENTRESTO 24+26MG 28CP RE" loading="lazy" decoding="async">
+
+                    <h4>ENTRESTO 24+26MG 28CP RE</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 184,10
+                    </div>
+
+                    <button data-product-img="img/entresto.jfif" data-product-id="med-132" data-product-name="ENTRESTO 24+26MG 28CP RE" data-product-price="184.10">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="vitaminas">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/scott.jfif" alt="SCOTT TRAD FRASCO 20 0ML A GSK" loading="lazy" decoding="async">
+
+                    <h4>SCOTT TRAD FRASCO 20 0ML A GSK</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 37,90
+                    </div>
+
+                    <button data-product-img="img/scott.jfif" data-product-id="med-133" data-product-name="SCOTT TRAD FRASCO 20 0ML A GSK" data-product-price="37.90">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="digestivos">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/eparemaxarope.jfif" alt="EPAREMA 200ML XAROPE" loading="lazy" decoding="async">
+
+                    <h4>EPAREMA 200ML XAROPE</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 71,50
+                    </div>
+
+                    <button data-product-img="img/eparemaxarope.jfif" data-product-id="med-134" data-product-name="EPAREMA 200ML XAROPE" data-product-price="71.50">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="alergias">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/esalerg.jfif" alt="ESALERG GOTAS 20ML 1" loading="lazy" decoding="async">
+
+                    <h4>ESALERG GOTAS 20ML 1</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 51,30
+                    </div>
+
+                    <button data-product-img="img/esalerg.jfif" data-product-id="med-135" data-product-name="ESALERG GOTAS 20ML 1" data-product-price="51.30">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="digestivos">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/esio.jfif" alt="ESIO 20MG 28CPR" loading="lazy" decoding="async">
+
+                    <h4>ESIO 20MG 28CPR</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 91,85
+                    </div>
+
+                    <button data-product-img="img/esio.jfif" data-product-id="med-136" data-product-name="ESIO 20MG 28CPR" data-product-price="91.85">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="circulacao">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/equitam.jfif" alt="EQUITAM 80MG C/30 CPRO" loading="lazy" decoding="async">
+
+                    <h4>EQUITAM 80MG C/30 CPRO</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 78,50
+                    </div>
+
+                    <button data-product-img="img/equitam.jfif" data-product-id="med-137" data-product-name="EQUITAM 80MG C/30 CPRO" data-product-price="78.50">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="metabolismo">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/euthyrox25.jfif" alt="EUTHYROX 25MCG C/50CP" loading="lazy" decoding="async">
+
+                    <h4>EUTHYROX 25MCG C/50CP</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 35,45
+                    </div>
+
+                    <button data-product-img="img/euthyrox25.jfif" data-product-id="med-138" data-product-name="EUTHYROX 25MCG C/50CP" data-product-price="35.45">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="metabolismo">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/euthyrox50.jfif" alt="EUTHYROX 50MCG C/50CP" loading="lazy" decoding="async">
+
+                    <h4>EUTHYROX 50MCG C/50CP</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 40,55
+                    </div>
+
+                    <button data-product-img="img/euthyrox50.jfif" data-product-id="med-139" data-product-name="EUTHYROX 50MCG C/50CP" data-product-price="40.55">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="metabolismo">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/euthyrox75.jfif" alt="EUTHYROX 75MCG C/50CP" loading="lazy" decoding="async">
+
+                    <h4>EUTHYROX 75MCG C/50CP</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 44,85
+                    </div>
+
+                    <button data-product-img="img/euthyrox75.jfif" data-product-id="med-140" data-product-name="EUTHYROX 75MCG C/50CP" data-product-price="44.85">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="metabolismo">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/euthyrox100.jfif" alt="EUTHYROX 100MCG C/50CP" loading="lazy" decoding="async">
+
+                    <h4>EUTHYROX 100MCG C/50CP</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 45,40
+                    </div>
+
+                    <button data-product-img="img/euthyrox100.jfif" data-product-id="med-141" data-product-name="EUTHYROX 100MCG C/50CP" data-product-price="45.40">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="analgesicos">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/flancox.jfif" alt="FLANCOX 600MG C/14CP" loading="lazy" decoding="async">
+
+                    <h4>FLANCOX 600MG C/14CP</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 61,75
+                    </div>
+
+                    <button data-product-img="img/flancox.jfif" data-product-id="med-142" data-product-name="FLANCOX 600MG C/14CP" data-product-price="61.75">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="alergias">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/fenergan.jfif" alt="FENERGAN 25MG 20DRG" loading="lazy" decoding="async">
+
+                    <h4>FENERGAN 25MG 20DRG</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 18,65
+                    </div>
+
+                    <button data-product-img="img/fenergan.jfif" data-product-id="med-143" data-product-name="FENERGAN 25MG 20DRG" data-product-price="18.65">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="vitaminas genericos">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/ferro100.jfif" alt="FERRO 100MG C/30 CPRO" loading="lazy" decoding="async">
+
+                    <h4>FERRO 100MG C/30 CPRO</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 58,00
+                    </div>
+
+                    <button data-product-img="img/ferro100.jfif" data-product-id="med-144" data-product-name="FERRO 100MG C/30 CPRO" data-product-price="58.00">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="circulacao">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/flebon50.jfif" alt="FLEBON 50MG C/30 CPRO" loading="lazy" decoding="async">
+
+                    <h4>FLEBON 50MG C/30 CPRO</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 85,45
+                    </div>
+
+                    <button data-product-img="img/flebon50.jfif" data-product-id="med-145" data-product-name="FLEBON 50MG C/30 CPRO" data-product-price="85.45">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="respiratorios">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/filinarxarope.jfif" alt="FILINAR XPE ADU 120M" loading="lazy" decoding="async">
+
+                    <h4>FILINAR XPE ADU 120M</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 41,30
+                    </div>
+
+                    <button data-product-img="img/filinarxarope.jfif" data-product-id="med-146" data-product-name="FILINAR XPE ADU 120M" data-product-price="41.30">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="respiratorios">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/filinarinfantil.jfif" alt="FILINAR G 120ML" loading="lazy" decoding="async">
+
+                    <h4>FILINAR G 120ML</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 29,10
+                    </div>
+
+                    <button data-product-img="img/filinarinfantil.jfif" data-product-id="med-147" data-product-name="FILINAR G 120ML" data-product-price="29.10">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="digestivos">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/figatil.jfif" alt="FIGATIL 20DRG" loading="lazy" decoding="async">
+
+                    <h4>FIGATIL 20DRG</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 47,90
+                    </div>
+
+                    <button data-product-img="img/figatil.jfif" data-product-id="med-148" data-product-name="FIGATIL 20DRG" data-product-price="47.90">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="cuidados-pessoais">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/foldan.jfif" alt="FOLDAN POM 45G" loading="lazy" decoding="async">
+
+                    <h4>FOLDAN POM 45G</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 42,90
+                    </div>
+
+                    <button data-product-img="img/foldan.jfif" data-product-id="med-149" data-product-name="FOLDAN POM 45G" data-product-price="42.90">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="vitaminas">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/folifer.jfif" alt="FOLIFER SUSP ORAL GTS 30 ML" loading="lazy" decoding="async">
+
+                    <h4>FOLIFER SUSP ORAL GTS 30 ML</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 75,10
+                    </div>
+
+                    <button data-product-img="img/folifer.jfif" data-product-id="med-150" data-product-name="FOLIFER SUSP ORAL GTS 30 ML" data-product-price="75.10">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="respiratorios">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/formocaps.jfif" alt="FORMOCAPS REFIL 12MCG C/30 CAP" loading="lazy" decoding="async">
+
+                    <h4>FORMOCAPS REFIL 12MCG C/30 CAP</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 64,85
+                    </div>
+
+                    <button data-product-img="img/formocaps.jfif" data-product-id="med-151" data-product-name="FORMOCAPS REFIL 12MCG C/30 CAP" data-product-price="64.85">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="metabolismo">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/forxiga.jfif" alt="FORXIGA 10MG C/30 COMP" loading="lazy" decoding="async">
+
+                    <h4>FORXIGA 10MG C/30 COMP</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 218,30
+                    </div>
+
+                    <button data-product-img="img/forxiga.jfif" data-product-id="med-152" data-product-name="FORXIGA 10MG C/30 COMP" data-product-price="218.30">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="analgesicos">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/flanax550.jfif" alt="FLANAX 550MG C/15CP CAIXA" loading="lazy" decoding="async">
+
+                    <h4>FLANAX 550MG C/15CP CAIXA</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 32,40
+                    </div>
+
+                    <button data-product-img="img/flanax550.jfif" data-product-id="med-153" data-product-name="FLANAX 550MG C/15CP CAIXA" data-product-price="32.40">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="analgesicos">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/flanaxxr.jfif" alt="FLANAX XR 660MG C/8 CPRO" loading="lazy" decoding="async">
+
+                    <h4>FLANAX XR 660MG C/8 CPRO</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 29,70
+                    </div>
+
+                    <button data-product-img="img/flanaxxr.jfif" data-product-id="med-154" data-product-name="FLANAX XR 660MG C/8 CPRO" data-product-price="29.70">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="vitaminas">
+
+                    <span class="discount">-20%</span>
+
+                    <img src="img/floripa.jfif" alt="FLORIPA SOL OR FR GTS 8 ML" loading="lazy" decoding="async">
+
+                    <h4>FLORIPA SOL OR FR GTS 8 ML</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 140,00
+                    </div>
+
+                    <button data-product-img="img/floripa.jfif" data-product-id="med-155" data-product-name="FLORIPA SOL OR FR GTS 8 ML" data-product-price="140.00">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="respiratorios">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/fluir.jfif" alt="FLUIR REFIL C/30 CAPS" loading="lazy" decoding="async">
+
+                    <h4>FLUIR REFIL C/30 CAPS</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 70,40
+                    </div>
+
+                    <button data-product-img="img/fluir.jfif" data-product-id="med-156" data-product-name="FLUIR REFIL C/30 CAPS" data-product-price="70.40">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="respiratorios">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/fluibron.jfif" alt="FLUIBRON 7,5MG GTS 5 0ML" loading="lazy" decoding="async">
+
+                    <h4>FLUIBRON 7,5MG GTS 5 0ML</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 25,45
+                    </div>
+
+                    <button data-product-img="img/fluibron.jfif" data-product-id="med-157" data-product-name="FLUIBRON 7,5MG GTS 5 0ML" data-product-price="25.45">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="genericos respiratorios">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/ambroxol.jfif" alt="CLOR AMBROXOL SOL 50ML GEN" loading="lazy" decoding="async">
+
+                    <h4>CLOR AMBROXOL SOL 50ML GEN</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 21,20
+                    </div>
+
+                    <button data-product-img="img/ambroxol.jfif" data-product-id="med-158" data-product-name="CLOR AMBROXOL SOL 50ML GEN" data-product-price="21.20">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="infantil respiratorios">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/fluimucil.jfif" alt="FLUIMUCIL XPE PED 12" loading="lazy" decoding="async">
+
+                    <h4>FLUIMUCIL XPE PED 12</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 32,85
+                    </div>
+
+                    <button data-product-img="img/fluimucil.jfif" data-product-id="med-159" data-product-name="FLUIMUCIL XPE PED 12" data-product-price="32.85">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="metabolismo">
+
+                    <span class="discount">-18%</span>
+
+                    <img src="img/glifage500.jfif" alt="GLIFAGE XR 500MG C/30CP CAIXA" loading="lazy" decoding="async">
+
+                    <h4>GLIFAGE XR 500MG C/30CP CAIXA</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 10,00
+                    </div>
+
+                    <button data-product-img="img/glifage500.jfif" data-product-id="med-160" data-product-name="GLIFAGE XR 500MG C/30CP CAIXA" data-product-price="10.00">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="metabolismo">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/glifage850.jfif" alt="GLIFAGE XR 850 MG 30 CP R MERC" loading="lazy" decoding="async">
+
+                    <h4>GLIFAGE XR 850 MG 30 CP R MERC</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 38,25
+                    </div>
+
+                    <button data-product-img="img/glifage850.jfif" data-product-id="med-161" data-product-name="GLIFAGE XR 850 MG 30 CP R MERC" data-product-price="38.25">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="metabolismo">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/glifage1.jfif" alt="GLIFAGE XR 1G 30CPR" loading="lazy" decoding="async">
+
+                    <h4>GLIFAGE XR 1G 30CPR</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 51,75
+                    </div>
+
+                    <button data-product-img="img/glifage1.jfif" data-product-id="med-162" data-product-name="GLIFAGE XR 1G 30CPR" data-product-price="51.75">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+                <div class="product-card" data-category="respiratorios">
+
+                    <span class="discount">-10%</span>
+
+                    <img src="img/hexamedine.jfif" alt="HEXOMEDINE COL 50ML" loading="lazy" decoding="async">
+
+                    <h4>HEXOMEDINE COL 50ML</h4>
+
+                    <p></p>
+
+                    <div class="price">
+                        R$ 67,65
+                    </div>
+
+                    <button data-product-img="img/hexamedine.jfif" data-product-id="med-163" data-product-name="HEXOMEDINE COL 50ML" data-product-price="67.65">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Adicionar ao pedido
+                    </button>
+
+                </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer class="footer">
+
+        <div class="footer-item">
+
+            <i class="fa-solid fa-truck"></i>
+
+            <div>
+                <h4>Entrega para toda cidade</h4>
+                <p>Receba rápido e com segurança</p>
+            </div>
+
+        </div>
+
+        <div class="footer-item">
+
+            <i class="fa-solid fa-box"></i>
+
+            <div>
+                <h4>Frete grátis</h4>
+                <p>Em todas as compras, sempre</p>
+            </div>
+
+        </div>
+
+        <div class="footer-item">
+
+            <i class="fa-solid fa-capsules"></i>
+
+            <div>
+                <h4>Medicamentos genéricos</h4>
+                <p>Economize em produtos originais</p>
+            </div>
+
+        </div>
+
+        <div class="footer-item">
+
+            <i class="fa-solid fa-heart-pulse"></i>
+
+            <div>
+                <h4>Precisa de ajuda?</h4>
+                <p>Fale com nossos farmacêuticos</p>
+            </div>
+
+        </div>
+
+    </footer>
+
+    <script src="config.js"></script>
+<script src="supabase.min.js"></script>
+<script src="supabase-api.js"></script>
+    <script src="catalogo.js"></script>
+    <script src="script.js?v=6"></script>
+
+</body>
+
+</html>

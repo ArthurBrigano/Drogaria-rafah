@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho |Farmácia Rafah+</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="header">
+
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/logo.png" alt="Drogaria Rafah+">
+            </a>
+        </div>
+
+         <nav class="navbar">
+            <a href="index.html" >Início</a>
+            <a href="produtos.html">Produtos</a>
+            <a href="ofertas.html" >Ofertas</a>
+            <a href="contato.html">Contato</a>
+        </nav>
+
+        <div class="header-icons">
+
+            <a href="carrinho.html" class="cart-btn">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Meu carrinho
+                <span id="cart-count">0</span>
+            </a>
+
+        </div>
+
+    </header>
+
+    <section class="search-area">
+
+        <div class="search-box">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input type="text"
+                placeholder="Busque por medicamentos, produtos e mais...">
+
+            <button>Buscar</button>
+
+        </div>
+
+        <div class="mini-cards">
+
+            <div class="mini-card">
+
+                <i class="fa-solid fa-truck-fast"></i>
+
+                <div>
+                    <h4>Entrega rápida</h4>
+                    <p>Para toda cidade</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="cart-page">
+
+        <div class="cart-left">
+
+            <div class="cart-title">
+
+                <h1>Meu carrinho</h1>
+
+                <span id="cart-title-count">0 itens</span>
+
+            </div>
+
+            <div id="cart-items-container"></div>
+
+            <div id="cart-empty-message" class="cart-empty-message">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <h3>Seu carrinho está vazio</h3>
+                <p>Adicione produtos para vê-los aqui.</p>
+                <a href="produtos.html">Ver produtos</a>
+            </div>
+
+            <div class="cart-benefit">
+
+                <i class="fa-solid fa-shield-heart"></i>
+
+                <div>
+                    <h4>Compra 100% segura</h4>
+                    <p>Seus dados protegidos durante toda compra.</p>
+                </div>
+
+            </div>
+
+            <div class="recommended-products">
+
+                <div class="section-title">
+
+                    <h2>Você também pode gostar</h2>
+
+                </div>
+
+                <div class="recommend-grid">
+
+                    <div class="recommend-card">
+
+                        <img src="img/enoLaranja.jpg" alt="Produto">
+
+                        <h4>ENO</h4>
+
+                        <span>R$ 5,00</span>
+
+                        <button data-product-id="eno" data-product-name="ENO Laranja" data-product-price="5.00" data-product-img="img/enoLaranja.jpg">Adicionar</button>
+
+                    </div>
+
+                    <div class="recommend-card">
+
+                        <img src="img/lavitanA-Z.jpg" alt="Produto">
+
+                        <h4>Lavitan</h4>
+
+                        <span>R$ 23,90</span>
+
+                        <button data-product-id="lavitan" data-product-name="Lavitan A-Z" data-product-price="23.90" data-product-img="img/lavitanA-Z.jpg">Adicionar</button>
+
+                    </div>
+
+                    <div class="recommend-card">
+
+                        <img src="img/sorineSpray.jpg" alt="Produto">
+
+                        <h4>Sorine</h4>
+
+                        <span>R$ 18,90</span>
+
+                        <button data-product-id="sorine" data-product-name="Sorine" data-product-price="18.90" data-product-img="img/sorineSpray.jpg">Adicionar</button>
+
+                    </div>
+
+                    <div class="recommend-card">
+
+                        <img src="img/engovCart6.jpg" alt="Produto">
+
+                        <h4>Engov</h4>
+
+                        <span>R$ 8,90</span>
+
+                        <button data-product-id="engov" data-product-name="Engov" data-product-price="8.90" data-product-img="img/engovCart6.jpg">Adicionar</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="cart-right">
+
+            <div class="summary-box">
+
+                <h2>Resumo do pedido</h2>
+
+                <div class="summary-item">
+
+                    <span>Subtotal</span>
+
+                    <span id="cart-subtotal">R$ 0,00</span>
+
+                </div>
+
+                <div class="summary-item">
+
+                    <span>Entrega</span>
+
+                    <span id="cart-shipping" class="free-delivery">GRÁTIS</span>
+
+                </div>
+
+                <div class="summary-item total">
+
+                    <span>Total estimado</span>
+
+                    <span id="cart-total">R$ 0,00</span>
+
+                </div>
+
+                <p style="font-size:12px;color:#777;margin-top:-10px;">
+                    Seu pedido será confirmado pela farmácia pelo WhatsApp. Preços e disponibilidade sujeitos à confirmação. Ao abrir o WhatsApp, toque em enviar para encaminhar o pedido.
+                </p>
+
+                <button class="finish-btn" id="finish-order-btn">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    Enviar pedido pelo WhatsApp
+                </button>
+
+                <button class="continue-btn" id="continue-shopping-btn">
+                    Continuar escolhendo produtos
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer class="footer">
+
+        <div class="footer-item">
+
+            <i class="fa-solid fa-truck"></i>
+
+            <div>
+                <h4>Entrega para toda cidade</h4>
+                <p>Receba rápido e com segurança</p>
+            </div>
+
+        </div>
+
+        <div class="footer-item">
+
+            <i class="fa-solid fa-box"></i>
+
+            <div>
+                <h4>Frete grátis</h4>
+                <p>Em todas as compras, sempre</p>
+            </div>
+
+        </div>
+
+        <div class="footer-item">
+
+            <i class="fa-solid fa-capsules"></i>
+
+            <div>
+                <h4>Medicamentos genéricos</h4>
+                <p>Economize em produtos originais</p>
+            </div>
+
+        </div>
+
+        <div class="footer-item">
+
+            <i class="fa-solid fa-heart-pulse"></i>
+
+            <div>
+                <h4>Precisa de ajuda?</h4>
+                <p>Fale com nossos farmacêuticos</p>
+            </div>
+
+        </div>
+
+    </footer>
+
+    <script src="config.js"></script>
+<script src="supabase.min.js"></script>
+<script src="supabase-api.js"></script>
+    <script src="catalogo.js"></script>
+    <script src="script.js?v=6"></script>
+
+</body>
+
+</html>

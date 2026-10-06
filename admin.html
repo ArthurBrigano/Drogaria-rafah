@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Administração | Drogaria Rafah+</title><link rel="stylesheet" href="admin.css"></head>
+<body>
+<header class="admin-header"><a href="index.html" class="brand">DROGARIA <strong>RAFAH<span>+</span></strong></a><div><a href="index.html" target="_blank" rel="noopener">Ver site ↗</a><button id="logout" hidden>Sair</button></div></header>
+<main>
+    <section id="login-panel" class="login-panel">
+        <span class="eyebrow">ÁREA ADMINISTRATIVA</span><h1>Gerencie seu catálogo</h1><p>Cadastre produtos e organize as ofertas da farmácia.</p>
+        <form id="login-form"><label for="username">E-mail do administrador</label><input id="username" name="username" type="email" autocomplete="username" placeholder="seuemail@exemplo.com" required>
+            <label for="password">Senha do administrador</label><input id="password" name="password" type="password" autocomplete="current-password" required maxlength="200">
+            <button class="primary" type="submit">Entrar no painel</button>
+        </form><p class="help">Use o e-mail e a senha cadastrados em Authentication no Supabase. Os clientes usam o site sem conta.</p>
+        <p id="login-status" role="status"></p>
+    </section>
+    <section id="dashboard" hidden>
+        <div class="page-heading"><div><span class="eyebrow">DROGARIA RAFAH+</span><h1>Produtos e ofertas</h1><p>As alterações salvas aparecem no catálogo ao atualizar a página.</p></div><button id="new-product" class="primary">+ Novo produto</button></div>
+        <div class="stats"><div><span>Produtos cadastrados</span><strong id="total-products">0</strong></div><div><span>Visíveis no site</span><strong id="active-products">0</strong></div><div><span>Ofertas ativas</span><strong id="offer-products">0</strong></div></div>
+        <div class="toolbar"><div class="search"><label for="admin-search">Buscar produto</label><input type="search" id="admin-search" placeholder="Digite o nome do produto"></div><div><label for="admin-filter">Mostrar</label><select id="admin-filter"><option value="all">Todos os produtos</option><option value="offers">Ofertas</option><option value="active">Visíveis</option><option value="hidden">Ocultos</option></select></div><button id="refresh" class="secondary">Atualizar lista</button></div>
+        <p id="dashboard-status" role="status"></p>
+        <div class="table-wrap"><table><caption class="sr-only">Produtos cadastrados na farmácia</caption><thead><tr><th>Produto</th><th>Preço normal</th><th>Oferta</th><th>Visibilidade</th><th>Ações</th></tr></thead><tbody id="product-rows"></tbody></table></div>
+        <p id="empty-list" hidden>Nenhum produto encontrado.</p>
+        <p class="help">Para retirar um produto temporariamente, edite e desmarque “Visível no site”. Para encerrar uma promoção, desmarque “Colocar em oferta”.</p>
+    </section>
+</main>
+<dialog id="product-dialog" aria-labelledby="editor-title">
+    <form id="product-form">
+        <div class="dialog-heading"><div><span class="eyebrow">CATÁLOGO</span><h2 id="editor-title">Novo produto</h2></div><button id="close-editor" type="button" class="icon-button" aria-label="Fechar formulário">×</button></div>
+        <div class="editor-grid"><div>
+            <label for="product-name">Nome do produto *</label><input id="product-name" required maxlength="160" placeholder="Ex.: Vitamina C 1g com 10 comprimidos">
+            <label for="product-description">Descrição</label><textarea id="product-description" maxlength="600" rows="3" placeholder="Apresentação, laboratório ou detalhes do produto"></textarea>
+            <div class="price-grid"><div><label for="product-price">Preço normal (R$) *</label><input type="number" id="product-price" min="0.01" max="100000" step="0.01" required></div><div id="offer-price-group" hidden><label for="product-offer">Preço da oferta (R$) *</label><input type="number" id="product-offer" min="0.01" max="100000" step="0.01"></div></div>
+            <label class="check"><input type="checkbox" id="product-is-offer"> Colocar em oferta</label><p id="discount-preview" class="help"></p>
+            <fieldset><legend>Categorias * <small>(pode escolher mais de uma)</small></legend><div id="product-categories" class="categories"></div></fieldset>
+            <label class="check"><input type="checkbox" id="product-active" checked> Visível no site</label>
+            <label class="check"><input type="checkbox" id="product-featured"> Destacar na página inicial</label>
+        </div><div class="image-editor">
+            <label for="product-image">Foto do produto *</label><div class="image-preview"><img id="image-preview" alt="Prévia da imagem do produto" hidden><span id="image-placeholder">Escolha uma imagem</span></div>
+            <input type="file" id="product-image" accept="image/jpeg,image/png,image/webp"><p class="help">Escolha uma foto do computador. JPG, PNG ou WebP, até 2 MB. Ao editar, a foto atual é mantida se você não escolher outra.</p>
+        </div></div>
+        <p id="form-status" role="status"></p><div class="dialog-actions"><button type="button" id="cancel-editor" class="secondary">Cancelar</button><button type="submit" id="save-product" class="primary">Salvar produto</button></div>
+    </form>
+</dialog>
+<dialog id="delete-dialog" aria-labelledby="delete-title"><h2 id="delete-title">Excluir produto?</h2><p id="delete-description"></p><p>Ele será removido do catálogo e das ofertas. Esta ação não pode ser desfeita.</p><p id="delete-status" role="status"></p><div class="dialog-actions"><button id="cancel-delete" class="secondary">Cancelar</button><button id="confirm-delete" class="danger">Excluir produto</button></div></dialog>
+<script src="config.js"></script>
+<script src="supabase.min.js"></script>
+<script src="supabase-api.js"></script>
+<script src="admin.js"></script>
+</body></html>

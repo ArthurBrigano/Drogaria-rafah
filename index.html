@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Farmácia Rafah+</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/logo.png" alt="Drogaria Rafah+">
+            </a>
+        </div>
+
+        <nav class="navbar">
+            <a href="index.html" class="active">Início</a>
+            <a href="produtos.html">Produtos</a>
+            <a href="ofertas.html">Ofertas</a>
+            <a href="contato.html">Contato</a>
+            
+        </nav>
+
+        <div class="header-icons">
+
+            <a href="carrinho.html" class="cart-btn">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Meu carrinho
+                <span id="cart-count">0</span>
+            </a>
+
+        </div>
+
+    </header>
+
+    <section class="search-area">
+
+        <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input type="text"
+                placeholder="Busque por medicamentos, produtos e mais..." />
+
+            <button>Buscar</button>
+        </div>
+
+        <div class="mini-cards">
+
+            <div class="mini-card">
+                <i class="fa-solid fa-truck-fast"></i>
+
+                <div>
+                    <h4>Entrega rápida</h4>
+                    <p>Para toda cidade</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="home-carousel" aria-label="Destaques da Drogaria Rafah+" aria-roledescription="carrossel">
+        <div class="carousel-frame">
+        <div class="carousel-slides">
+            <div class="carousel-slide"><img src="img/banner-boas-vindas.webp" alt="Bem-vindo à Drogaria Rafah+. Cuidado e atenção para você e sua família." fetchpriority="high"></div>
+            <div class="carousel-slide" hidden><img src="img/banner-cuidados.webp" alt="Seu cuidado começa aqui. Higiene e cuidados pessoais para o dia a dia." loading="lazy"></div>
+            <div class="carousel-slide" hidden><img src="img/fachada-rafah.webp" alt="Conheça a fachada da Drogaria Rafah+." loading="lazy"></div>
+        </div>
+        <button class="carousel-arrow carousel-prev" type="button" data-carousel-prev aria-label="Imagem anterior">❮</button>
+        <button class="carousel-arrow carousel-next" type="button" data-carousel-next aria-label="Próxima imagem">❯</button>
+        </div>
+        <div class="carousel-controls">
+            <div class="carousel-dots">
+                <button type="button" data-carousel-index="0" aria-label="Mostrar boas-vindas" aria-pressed="true"></button>
+                <button type="button" data-carousel-index="1" aria-label="Mostrar cuidados pessoais" aria-pressed="false"></button>
+                <button type="button" data-carousel-index="2" aria-label="Mostrar a farmácia" aria-pressed="false"></button>
+            </div>
+        </div>
+        <div class="catalogue-intro">
+            <h1>Consulte os produtos e monte seu pedido</h1>
+            <p>Adicione os produtos ao carrinho e envie seu pedido pelo WhatsApp para confirmação da farmácia.</p>
+            <a href="produtos.html">Ver produtos</a>
+        </div>
+    </section>
+
+    <section class="benefits">
+
+        <div class="benefit">
+            <i class="fa-solid fa-percent"></i>
+            <span>Descontos exclusivos</span>
+        </div>
+
+        <div class="benefit">
+            <i class="fa-solid fa-headset"></i>
+            <span>Atendimento humanizado</span>
+        </div>
+
+        <div class="benefit">
+            <i class="fa-solid fa-lock"></i>
+            <span>Compra segura</span>
+        </div>
+
+        <div class="benefit">
+            <i class="fa-solid fa-file-prescription"></i>
+            <span>Receita online</span>
+        </div>
+
+    </section>
+
+    <section class="products">
+
+        <div class="section-title">
+            <h2>Produtos em destaque</h2>
+
+            <a href="produtos.html">Ver todos</a>
+        </div>
+
+        <div class="products-grid">
+
+            <div class="product-card">
+
+                <span class="discount">-20%</span>
+
+                <img src="img/enoLaranja.jpg"
+                    alt="Produto">
+
+                <h4>ENO Laranja</h4>
+
+                <p>Alívio rápido da azia</p>
+
+                <div class="price">
+                    R$ 5,00
+                </div>
+
+                <button data-product-id="eno" data-product-name="ENO Laranja" data-product-price="5.00" data-product-img="img/enoLaranja.jpg">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Adicionar ao pedido
+                </button>
+
+            </div>
+
+            <div class="product-card">
+
+                <span class="discount">-15%</span>
+
+                <img src="img/dorflexCartela.jpg"
+                    alt="Produto">
+
+                <h4>Dorflex</h4>
+
+                <p>Analgésico e relaxante</p>
+
+                <div class="price">
+                    R$ 8,00
+                </div>
+
+                <button data-product-id="dorflex" data-product-name="Dorflex" data-product-price="8.00" data-product-img="img/dorflexCartela.jpg">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Adicionar ao pedido
+                </button>
+
+            </div>
+
+            <div class="product-card">
+
+                <span class="discount">-10%</span>
+
+                <img src="img/neosaldina.jpg"
+                    alt="Produto">
+
+                <h4>Neosaldina</h4>
+
+                <p>Combate dores e enxaquecas</p>
+
+                <div class="price">
+                    R$ 10,50
+                </div>
+
+                <button data-product-id="neosaldina" data-product-name="Neosaldina" data-product-price="10.50" data-product-img="img/neosaldina.jpg">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Adicionar ao pedido
+                </button>
+
+            </div>
+
+            <div class="product-card">
+
+                <span class="discount">-25%</span>
+
+                <img src="img/dipirona500mg.jpg"
+                    alt="Produto">
+
+                <h4>Dipirona 500mg</h4>
+
+                <p>Alívio de dores de cabeça, musculares e de dente</p>
+
+                <div class="price">
+                    R$ 5,00
+                </div>
+
+                <button data-product-id="dipirona" data-product-name="Dipirona 500mg" data-product-price="5.00" data-product-img="img/dipirona500mg.jpg">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Adicionar ao pedido
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer class="footer">
+
+        <div class="footer-item">
+            <i class="fa-solid fa-truck"></i>
+            <div>
+                <h4>Entrega para toda cidade</h4>
+                <p>Receba rápido e com segurança</p>
+            </div>
+        </div>
+
+        <div class="footer-item">
+            <i class="fa-solid fa-box"></i>
+            <div>
+                <h4>Frete grátis</h4>
+                <p>Em todas as compras, sempre</p>
+            </div>
+        </div>
+
+        <div class="footer-item">
+            <i class="fa-solid fa-capsules"></i>
+            <div>
+                <h4>Medicamentos genéricos</h4>
+                <p>Economize em produtos originais</p>
+            </div>
+        </div>
+
+        <div class="footer-item">
+            <i class="fa-solid fa-heart-pulse"></i>
+            <div>
+                <h4>Precisa de ajuda?</h4>
+                <p>Fale com nossos farmacêuticos</p>
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="config.js"></script>
+<script src="supabase.min.js"></script>
+<script src="supabase-api.js"></script>
+    <script src="catalogo.js"></script>
+    <script src="script.js?v=6"></script>
+
+</body>
+</html>
