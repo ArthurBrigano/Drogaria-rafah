@@ -1251,3 +1251,127 @@ select {
 .catalog-old-price { color: #777; text-decoration: line-through; font-size: 13px; display: block; }
 .catalog-empty { grid-column: 1 / -1; padding: 25px; }
 .recommend-grid .product-card { min-width: 0; }
+
+/* Layout para celulares: catálogo em duas colunas e navegação compacta. */
+.products-grid-wrapper, .cart-left, .contact-location { min-width: 0; }
+@media (max-width: 768px) {
+    .header {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 10px 8px;
+        padding: 12px 4%;
+        position: relative;
+    }
+    .logo { min-width: 0; }
+    .logo img { max-width: 100%; height: auto; max-height: 42px; }
+    .header-icons { justify-self: end; gap: 8px; }
+    .cart-btn { padding: 10px; min-height: 44px; gap: 6px; font-size: 12px; border-radius: 10px; }
+    .navbar {
+        grid-column: 1 / -1;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 4px;
+        width: 100%;
+        border-top: 1px solid #eee;
+        padding-top: 6px;
+    }
+    .navbar a { font-size: 14px; padding: 12px 6px; text-align: center; }
+    .navbar .active::after, .navbar a:hover::after { bottom: 3px; }
+    .search-area { width: 92%; margin: 18px auto; gap: 12px; align-items: stretch; }
+    .search-box { width: 100%; min-width: 0; height: 54px; flex: auto; padding: 0 10px; gap: 8px; border-radius: 12px; }
+    .search-box input { width: 0; min-width: 0; font-size: 16px; }
+    .search-box i { font-size: 16px; }
+    .search-box button { flex-shrink: 0; padding: 10px 12px; min-height: 44px; }
+    .mini-cards { flex-direction: row; flex-wrap: wrap; gap: 8px; }
+    .mini-card { flex: 1 1 140px; padding: 12px; gap: 8px; }
+    .products, .offers-section, .faq-section, .products-page, .cart-page,
+    .contact-content, .contact-cards, .offer-info, .whatsapp-qr-section {
+        width: 92%; margin: 24px auto;
+    }
+    .section-title { gap: 12px; align-items: baseline; margin-bottom: 16px; }
+    .section-title h2 { font-size: 22px; }
+    .section-title a { font-size: 13px; flex-shrink: 0; }
+    .products-top { margin-bottom: 20px; gap: 14px; }
+    .products-top h1, .cart-title h1 { font-size: 28px; }
+    .products-top select { width: 100%; font-size: 16px; }
+    .products-container { gap: 18px; }
+    .filters { width: 100%; min-width: 0; padding: 16px; border-radius: 16px; }
+    .filters h3 { font-size: 16px; margin-bottom: 10px; }
+    #category-filters {
+        display: flex; gap: 8px; overflow-x: auto;
+        padding: 4px 3px 10px; margin-bottom: 16px;
+        overscroll-behavior-x: contain;
+    }
+    #category-filters li { flex: 0 0 auto; margin: 0; border: 1px solid #eee; }
+    #category-filters button { width: auto; white-space: nowrap; padding: 12px; min-height: 44px; font-size: 13px; }
+    .filter-group { flex-direction: row; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; }
+    .filter-group label { display: flex; align-items: center; gap: 6px; min-height: 44px; }
+    .filter-group input { width: 18px; height: 18px; }
+    .products-grid, .products-grid-page, .offers-grid, .recommend-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+    .product-card, .offer-card, .recommend-card {
+        min-width: 0; display: flex; flex-direction: column;
+        padding: 12px; border-radius: 16px; border: 1px solid #ececec;
+    }
+    .product-card:hover, .offer-card:hover, .recommend-card:hover { transform: none; }
+    .product-card img, .offer-card img, .recommend-card img {
+        height: 132px; max-width: 100%; margin-bottom: 12px;
+    }
+    .product-card h4, .offer-card h4, .recommend-card h4 {
+        font-size: 14px; line-height: 1.4; overflow-wrap: anywhere; margin-bottom: 8px;
+    }
+    .product-card p, .offer-card p { font-size: 12px; line-height: 1.5; min-height: 0; margin-bottom: 10px; overflow-wrap: anywhere; }
+    .price, .new-price { font-size: 20px; line-height: 1.3; }
+    .prices { flex-wrap: wrap; gap: 4px 8px; margin-bottom: 12px; }
+    .old-price, .catalog-old-price { font-size: 12px; }
+    .discount, .offer-tag { top: 8px; left: 8px; padding: 4px 7px; font-size: 10px; }
+    .product-card button, .offer-card button, .recommend-card button {
+        margin-top: auto; min-height: 44px; height: auto; padding: 10px 6px;
+        font-size: 13px; line-height: 1.35; border-radius: 10px;
+    }
+    .home-carousel { width: 92%; margin: 18px auto; padding: 0; }
+    .carousel-slides { border-radius: 14px; }
+    .carousel-arrow { width: 36px; height: 44px; border-radius: 10px; }
+    .carousel-prev { left: 4px; } .carousel-next { right: 4px; }
+    .carousel-dots { gap: 0; }
+    .carousel-dots button { width: 44px; height: 44px; background: transparent; position: relative; }
+    .carousel-dots button[aria-pressed="true"] { background: transparent; }
+    .carousel-dots button::after { content: ''; position: absolute; width: 10px; height: 10px; border-radius: 50%; background: #bac6d3; top: 17px; left: 17px; }
+    .carousel-dots button[aria-pressed="true"]::after { background: #075299; }
+    .catalogue-intro { padding: 12px; }
+    .catalogue-intro p { font-size: 14px; }
+    .hero, .offers-hero, .contact-hero { width: 92%; padding: 22px; gap: 20px; margin: 24px auto; border-radius: 18px; }
+    .hero-text h1, .offers-text h1, .contact-left h1 { font-size: 30px; }
+    .benefits { width: 92%; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .benefit { padding: 14px; gap: 8px; border-radius: 14px; font-size: 13px; }
+    .benefit i { flex-shrink: 0; }
+    .footer { width: 92%; margin: 30px auto 20px; padding: 20px; gap: 20px; }
+    .footer-item { min-width: 0; overflow-wrap: anywhere; }
+    .cart-title { gap: 12px; align-items: flex-start; }
+    .cart-product { display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 12px; padding: 16px; text-align: left; border-radius: 16px; }
+    .cart-product img { width: 72px; height: 80px; }
+    .cart-product-info { min-width: 0; overflow-wrap: anywhere; }
+    .cart-product-info h3, .cart-product-info h4 { font-size: 15px; }
+    .product-price { font-size: 20px; }
+    .quantity-box { grid-column: 2; gap: 12px; }
+    .quantity-box button { width: 44px; height: 44px; }
+    .remove-item-btn { grid-column: 2; justify-self: start; margin: 0; min-height: 44px; padding: 10px; }
+    .cart-right { width: 100%; min-width: 0; }
+    .summary-box { position: static; padding: 20px; }
+    .contact-cards { grid-template-columns: 1fr; }
+    .contact-card, .contact-form-box, .contact-location { padding: 20px; min-width: 0; }
+    .location-info, .map-box { min-width: 0; width: 100%; }
+    .contact-card a { overflow-wrap: anywhere; }
+    .qr-card { width: 100%; max-width: 320px; }
+    .info-box { min-width: 0; width: 100%; padding: 18px; }
+    .rafah-toast { width: max-content; max-width: 92%; padding: 12px 16px; text-align: center; }
+}
+@media (max-width: 360px) {
+    .products-grid, .products-grid-page, .offers-grid, .recommend-grid { gap: 8px; }
+    .product-card, .offer-card, .recommend-card { padding: 10px; }
+    .product-card img, .offer-card img, .recommend-card img { height: 112px; }
+    .cart-btn { font-size: 11px; padding: 8px; }
+    .navbar a { font-size: 13px; padding: 12px 4px; }
+}
